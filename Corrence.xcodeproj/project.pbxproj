@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2EDE4D602504B6C1003376BA /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D5F2504B6C1003376BA /* Endpoint.swift */; };
-		2EDE4D632504B9CB003376BA /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D622504B9CB003376BA /* EndpointTests.swift */; };
+		2EDE4D632504B9CB003376BA /* APIEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D622504B9CB003376BA /* APIEndpointTests.swift */; };
 		2EDE4D652504BA0C003376BA /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D5F2504B6C1003376BA /* Endpoint.swift */; };
+		2EDE4D682504BEA1003376BA /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D672504BEA1003376BA /* APIEndpoint.swift */; };
+		2EDE4D692504BF17003376BA /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D672504BEA1003376BA /* APIEndpoint.swift */; };
 		2EDEFD4E25044D5400D7EB46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD4D25044D5400D7EB46 /* AppDelegate.swift */; };
 		2EDEFD5025044D5400D7EB46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD4F25044D5400D7EB46 /* SceneDelegate.swift */; };
 		2EDEFD5225044D5400D7EB46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD5125044D5400D7EB46 /* ViewController.swift */; };
@@ -37,7 +39,8 @@
 
 /* Begin PBXFileReference section */
 		2EDE4D5F2504B6C1003376BA /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		2EDE4D622504B9CB003376BA /* EndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
+		2EDE4D622504B9CB003376BA /* APIEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpointTests.swift; sourceTree = "<group>"; };
+		2EDE4D672504BEA1003376BA /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		2EDEFD4A25044D5400D7EB46 /* Corrence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Corrence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EDEFD4D25044D5400D7EB46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EDEFD4F25044D5400D7EB46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +79,8 @@
 		2EDE4D5C2504B330003376BA /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				2EDE4D5F2504B6C1003376BA /* Endpoint.swift */,
+				2EDE4D662504BE50003376BA /* Protocol */,
+				2EDE4D672504BEA1003376BA /* APIEndpoint.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -84,9 +88,17 @@
 		2EDE4D612504B9BF003376BA /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				2EDE4D622504B9CB003376BA /* EndpointTests.swift */,
+				2EDE4D622504B9CB003376BA /* APIEndpointTests.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		2EDE4D662504BE50003376BA /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				2EDE4D5F2504B6C1003376BA /* Endpoint.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		2EDEFD4125044D5400D7EB46 = {
@@ -269,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EDE4D682504BEA1003376BA /* APIEndpoint.swift in Sources */,
 				2EDE4D602504B6C1003376BA /* Endpoint.swift in Sources */,
 				2EDEFD5225044D5400D7EB46 /* ViewController.swift in Sources */,
 				2EDEFD8E2504694200D7EB46 /* Currency.swift in Sources */,
@@ -282,10 +295,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EDE4D692504BF17003376BA /* APIEndpoint.swift in Sources */,
 				2EDEFD9325046C5200D7EB46 /* Currency.swift in Sources */,
 				2EDEFD8B25045F0D00D7EB46 /* Observable.swift in Sources */,
 				2EDEFD90250469D600D7EB46 /* CurrencyTests.swift in Sources */,
-				2EDE4D632504B9CB003376BA /* EndpointTests.swift in Sources */,
+				2EDE4D632504B9CB003376BA /* APIEndpointTests.swift in Sources */,
 				2EDE4D652504BA0C003376BA /* Endpoint.swift in Sources */,
 				2EDEFD8925045E9C00D7EB46 /* ObservableTests.swift in Sources */,
 			);
