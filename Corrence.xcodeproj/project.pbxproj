@@ -13,7 +13,9 @@
 		2EDEFD5525044D5400D7EB46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EDEFD5325044D5400D7EB46 /* Main.storyboard */; };
 		2EDEFD5725044D5500D7EB46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EDEFD5625044D5500D7EB46 /* Assets.xcassets */; };
 		2EDEFD5A25044D5500D7EB46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EDEFD5825044D5500D7EB46 /* LaunchScreen.storyboard */; };
-		2EDEFD6525044D5500D7EB46 /* CorrenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD6425044D5500D7EB46 /* CorrenceTests.swift */; };
+		2EDEFD8725045ACB00D7EB46 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD8625045ACB00D7EB46 /* Observable.swift */; };
+		2EDEFD8925045E9C00D7EB46 /* ObservableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD8825045E9C00D7EB46 /* ObservableTests.swift */; };
+		2EDEFD8B25045F0D00D7EB46 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD8625045ACB00D7EB46 /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +38,9 @@
 		2EDEFD5925044D5500D7EB46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2EDEFD5B25044D5500D7EB46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EDEFD6025044D5500D7EB46 /* CorrenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CorrenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2EDEFD6425044D5500D7EB46 /* CorrenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrenceTests.swift; sourceTree = "<group>"; };
 		2EDEFD6625044D5500D7EB46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EDEFD8625045ACB00D7EB46 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		2EDEFD8825045E9C00D7EB46 /* ObservableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +82,10 @@
 		2EDEFD4C25044D5400D7EB46 /* Corrence */ = {
 			isa = PBXGroup;
 			children = (
-				2EDEFD4D25044D5400D7EB46 /* AppDelegate.swift */,
-				2EDEFD4F25044D5400D7EB46 /* SceneDelegate.swift */,
+				2EDEFD832504581500D7EB46 /* Model */,
+				2EDEFD8C250467E600D7EB46 /* Support */,
 				2EDEFD5125044D5400D7EB46 /* ViewController.swift */,
 				2EDEFD5325044D5400D7EB46 /* Main.storyboard */,
-				2EDEFD5625044D5500D7EB46 /* Assets.xcassets */,
-				2EDEFD5825044D5500D7EB46 /* LaunchScreen.storyboard */,
-				2EDEFD5B25044D5500D7EB46 /* Info.plist */,
 			);
 			path = Corrence;
 			sourceTree = "<group>";
@@ -93,10 +93,30 @@
 		2EDEFD6325044D5500D7EB46 /* CorrenceTests */ = {
 			isa = PBXGroup;
 			children = (
-				2EDEFD6425044D5500D7EB46 /* CorrenceTests.swift */,
+				2EDEFD8825045E9C00D7EB46 /* ObservableTests.swift */,
 				2EDEFD6625044D5500D7EB46 /* Info.plist */,
 			);
 			path = CorrenceTests;
+			sourceTree = "<group>";
+		};
+		2EDEFD832504581500D7EB46 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2EDEFD8625045ACB00D7EB46 /* Observable.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2EDEFD8C250467E600D7EB46 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				2EDEFD4D25044D5400D7EB46 /* AppDelegate.swift */,
+				2EDEFD4F25044D5400D7EB46 /* SceneDelegate.swift */,
+				2EDEFD5625044D5500D7EB46 /* Assets.xcassets */,
+				2EDEFD5825044D5500D7EB46 /* LaunchScreen.storyboard */,
+				2EDEFD5B25044D5500D7EB46 /* Info.plist */,
+			);
+			name = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +171,7 @@
 					};
 					2EDEFD5F25044D5500D7EB46 = {
 						CreatedOnToolsVersion = 12.0;
-						TestTargetID = 2EDEFD4925044D5400D7EB46;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -200,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EDEFD5225044D5400D7EB46 /* ViewController.swift in Sources */,
+				2EDEFD8725045ACB00D7EB46 /* Observable.swift in Sources */,
 				2EDEFD4E25044D5400D7EB46 /* AppDelegate.swift in Sources */,
 				2EDEFD5025044D5400D7EB46 /* SceneDelegate.swift in Sources */,
 			);
@@ -209,7 +230,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EDEFD6525044D5500D7EB46 /* CorrenceTests.swift in Sources */,
+				2EDEFD8B25045F0D00D7EB46 /* Observable.swift in Sources */,
+				2EDEFD8925045E9C00D7EB46 /* ObservableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,7 +423,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CorrenceTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -412,9 +434,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hikinit.CorrenceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Corrence.app/Corrence";
 			};
 			name = Debug;
 		};
@@ -422,7 +444,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CorrenceTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -435,7 +457,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Corrence.app/Corrence";
 			};
 			name = Release;
 		};
