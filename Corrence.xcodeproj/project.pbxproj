@@ -16,6 +16,10 @@
 		2EDEFD8725045ACB00D7EB46 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD8625045ACB00D7EB46 /* Observable.swift */; };
 		2EDEFD8925045E9C00D7EB46 /* ObservableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD8825045E9C00D7EB46 /* ObservableTests.swift */; };
 		2EDEFD8B25045F0D00D7EB46 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD8625045ACB00D7EB46 /* Observable.swift */; };
+		2EDEFD8E2504694200D7EB46 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD8D2504694200D7EB46 /* Currency.swift */; };
+		2EDEFD90250469D600D7EB46 /* CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD8F250469D600D7EB46 /* CurrencyTests.swift */; };
+		2EDEFD9225046A3400D7EB46 /* rates.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EDEFD9125046A3400D7EB46 /* rates.json */; };
+		2EDEFD9325046C5200D7EB46 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD8D2504694200D7EB46 /* Currency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,9 @@
 		2EDEFD6625044D5500D7EB46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EDEFD8625045ACB00D7EB46 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		2EDEFD8825045E9C00D7EB46 /* ObservableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableTests.swift; sourceTree = "<group>"; };
+		2EDEFD8D2504694200D7EB46 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		2EDEFD8F250469D600D7EB46 /* CurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTests.swift; sourceTree = "<group>"; };
+		2EDEFD9125046A3400D7EB46 /* rates.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rates.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +100,9 @@
 		2EDEFD6325044D5500D7EB46 /* CorrenceTests */ = {
 			isa = PBXGroup;
 			children = (
+				2EDEFD9125046A3400D7EB46 /* rates.json */,
 				2EDEFD8825045E9C00D7EB46 /* ObservableTests.swift */,
+				2EDEFD8F250469D600D7EB46 /* CurrencyTests.swift */,
 				2EDEFD6625044D5500D7EB46 /* Info.plist */,
 			);
 			path = CorrenceTests;
@@ -103,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				2EDEFD8625045ACB00D7EB46 /* Observable.swift */,
+				2EDEFD8D2504694200D7EB46 /* Currency.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EDEFD9225046A3400D7EB46 /* rates.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EDEFD5225044D5400D7EB46 /* ViewController.swift in Sources */,
+				2EDEFD8E2504694200D7EB46 /* Currency.swift in Sources */,
 				2EDEFD8725045ACB00D7EB46 /* Observable.swift in Sources */,
 				2EDEFD4E25044D5400D7EB46 /* AppDelegate.swift in Sources */,
 				2EDEFD5025044D5400D7EB46 /* SceneDelegate.swift in Sources */,
@@ -230,7 +242,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EDEFD9325046C5200D7EB46 /* Currency.swift in Sources */,
 				2EDEFD8B25045F0D00D7EB46 /* Observable.swift in Sources */,
+				2EDEFD90250469D600D7EB46 /* CurrencyTests.swift in Sources */,
 				2EDEFD8925045E9C00D7EB46 /* ObservableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
