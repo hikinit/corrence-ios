@@ -89,10 +89,9 @@
 		2EDEFD4C25044D5400D7EB46 /* Corrence */ = {
 			isa = PBXGroup;
 			children = (
+				2EDEFD952504765100D7EB46 /* View */,
 				2EDEFD832504581500D7EB46 /* Model */,
 				2EDEFD8C250467E600D7EB46 /* Support */,
-				2EDEFD5125044D5400D7EB46 /* ViewController.swift */,
-				2EDEFD5325044D5400D7EB46 /* Main.storyboard */,
 			);
 			path = Corrence;
 			sourceTree = "<group>";
@@ -100,9 +99,8 @@
 		2EDEFD6325044D5500D7EB46 /* CorrenceTests */ = {
 			isa = PBXGroup;
 			children = (
+				2EDEFD97250476A800D7EB46 /* Model */,
 				2EDEFD9125046A3400D7EB46 /* rates.json */,
-				2EDEFD8825045E9C00D7EB46 /* ObservableTests.swift */,
-				2EDEFD8F250469D600D7EB46 /* CurrencyTests.swift */,
 				2EDEFD6625044D5500D7EB46 /* Info.plist */,
 			);
 			path = CorrenceTests;
@@ -127,6 +125,24 @@
 				2EDEFD5B25044D5500D7EB46 /* Info.plist */,
 			);
 			name = Support;
+			sourceTree = "<group>";
+		};
+		2EDEFD952504765100D7EB46 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2EDEFD5325044D5400D7EB46 /* Main.storyboard */,
+				2EDEFD5125044D5400D7EB46 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2EDEFD97250476A800D7EB46 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2EDEFD8825045E9C00D7EB46 /* ObservableTests.swift */,
+				2EDEFD8F250469D600D7EB46 /* CurrencyTests.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
