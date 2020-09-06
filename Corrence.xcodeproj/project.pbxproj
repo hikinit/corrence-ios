@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EDE4D602504B6C1003376BA /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D5F2504B6C1003376BA /* Endpoint.swift */; };
+		2EDE4D632504B9CB003376BA /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D622504B9CB003376BA /* EndpointTests.swift */; };
+		2EDE4D652504BA0C003376BA /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D5F2504B6C1003376BA /* Endpoint.swift */; };
 		2EDEFD4E25044D5400D7EB46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD4D25044D5400D7EB46 /* AppDelegate.swift */; };
 		2EDEFD5025044D5400D7EB46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD4F25044D5400D7EB46 /* SceneDelegate.swift */; };
 		2EDEFD5225044D5400D7EB46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD5125044D5400D7EB46 /* ViewController.swift */; };
@@ -33,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2EDE4D5F2504B6C1003376BA /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		2EDE4D622504B9CB003376BA /* EndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
 		2EDEFD4A25044D5400D7EB46 /* Corrence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Corrence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EDEFD4D25044D5400D7EB46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EDEFD4F25044D5400D7EB46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +73,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2EDE4D5C2504B330003376BA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2EDE4D5F2504B6C1003376BA /* Endpoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2EDE4D612504B9BF003376BA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2EDE4D622504B9CB003376BA /* EndpointTests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		2EDEFD4125044D5400D7EB46 = {
 			isa = PBXGroup;
 			children = (
@@ -89,8 +110,9 @@
 		2EDEFD4C25044D5400D7EB46 /* Corrence */ = {
 			isa = PBXGroup;
 			children = (
-				2EDEFD952504765100D7EB46 /* View */,
 				2EDEFD832504581500D7EB46 /* Model */,
+				2EDEFD952504765100D7EB46 /* View */,
+				2EDE4D5C2504B330003376BA /* Network */,
 				2EDEFD8C250467E600D7EB46 /* Support */,
 			);
 			path = Corrence;
@@ -99,6 +121,7 @@
 		2EDEFD6325044D5500D7EB46 /* CorrenceTests */ = {
 			isa = PBXGroup;
 			children = (
+				2EDE4D612504B9BF003376BA /* Network */,
 				2EDEFD97250476A800D7EB46 /* Model */,
 				2EDEFD9125046A3400D7EB46 /* rates.json */,
 				2EDEFD6625044D5500D7EB46 /* Info.plist */,
@@ -246,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EDE4D602504B6C1003376BA /* Endpoint.swift in Sources */,
 				2EDEFD5225044D5400D7EB46 /* ViewController.swift in Sources */,
 				2EDEFD8E2504694200D7EB46 /* Currency.swift in Sources */,
 				2EDEFD8725045ACB00D7EB46 /* Observable.swift in Sources */,
@@ -261,6 +285,8 @@
 				2EDEFD9325046C5200D7EB46 /* Currency.swift in Sources */,
 				2EDEFD8B25045F0D00D7EB46 /* Observable.swift in Sources */,
 				2EDEFD90250469D600D7EB46 /* CurrencyTests.swift in Sources */,
+				2EDE4D632504B9CB003376BA /* EndpointTests.swift in Sources */,
+				2EDE4D652504BA0C003376BA /* Endpoint.swift in Sources */,
 				2EDEFD8925045E9C00D7EB46 /* ObservableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
