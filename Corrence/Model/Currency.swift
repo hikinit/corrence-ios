@@ -10,9 +10,10 @@ import Foundation
 struct Currency {
   typealias ISO = String
   typealias Value = Float
+  typealias Rates = [ISO: Value]
 
   var base: ISO
-  var rates: [ISO: Value]
+  var rates: Rates
 }
 
 extension Currency: Decodable {}
