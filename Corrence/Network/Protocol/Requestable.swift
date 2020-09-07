@@ -45,9 +45,7 @@ extension Requestable {
     let session = URLSession(configuration: .default)
     let task = session.dataTask(with: url) { data, response, error in
       guard let response = response as? HTTPURLResponse else {
-        DispatchQueue.main.async {
-          completion(.failure(RequestableError.invalidResponse))
-        }
+        completion(.failure(RequestableError.invalidResponse))
         return
       }
 
