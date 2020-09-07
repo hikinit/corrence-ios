@@ -8,6 +8,19 @@
 import XCTest
 
 class RateRequestTests: XCTestCase {
+  var sut: RateRequest!
+
+  override func setUp() {
+    super.setUp()
+    let endpoint = APIEndpoint.latest(base: "USD")
+    sut = RateRequest(endpoint: endpoint)
+  }
+
+  override func tearDown() {
+    sut = nil
+    super.tearDown()
+  }
+
   func getData() -> Data? {
     guard let jsonPath = Bundle(for: type(of: self)).path(forResource: "rates", ofType: "json") else {
       fatalError("Error rates.json not found")
@@ -26,9 +39,6 @@ class RateRequestTests: XCTestCase {
       return
     }
 
-    let endpoint = APIEndpoint.latest(base: "USD")
-    let sut = RateRequest(endpoint: endpoint)
-
     let json = sut.parse(data)
 
     guard case let .success(currency) = json else {
@@ -38,4 +48,24 @@ class RateRequestTests: XCTestCase {
     XCTAssertEqual(currency.base, "USD")
     XCTAssertNotNil(currency.rates)
   }
+
+  func testLoadJson() {
+    let exceptation = self.expectation(description: "Load JSON")
+
+    sut.load { result in
+      switch result {
+      case .success(let currency):
+        XCTAssertEqual(currency.base, "USD")
+        XCTAssertNotNil(currency.rates)
+      case .failure(let error):
+        XCTAssertThrowsError(error)
+      }
+
+      exceptation.fulfill()
+    }
+
+    wait(for: [exceptation], timeout: 2.0)
+  }
+
+  //TODO: Add mock networking
 }
