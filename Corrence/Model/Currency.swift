@@ -7,13 +7,27 @@
 
 import Foundation
 
-struct Currency {
-  typealias ISO = String
-  typealias Value = Float
-  typealias Rates = [ISO: Value]
-
-  var base: ISO
-  var rates: Rates
+struct CurrencyRate {
+  var iso: String
+  var value: Double
 }
 
-extension Currency: Decodable {}
+struct Currency {
+  var base: String
+  var rates: [CurrencyRate]
+}
+
+extension Currency: Decodable {
+  enum CodingKeys: CodingKey {
+    case base
+    case rates
+  }
+
+  init(from decoder: Decoder) throws {
+    let values = try decoder.container(keyedBy: CodingKeys.self)
+    base = try values.decode(String.self, forKey: .base)
+
+    let currencyRates = try values.decode(Dictionary<String, Double>.self, forKey: .rates)
+    rates = currencyRates.map { CurrencyRate(iso: $0, value: $1) }
+  }
+}
