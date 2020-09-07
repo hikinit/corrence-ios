@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E659A632505DDA700E5A746 /* RateRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E659A622505DDA700E5A746 /* RateRepositoryTests.swift */; };
+		2E659A652505DDB500E5A746 /* RateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E659A642505DDB500E5A746 /* RateRepository.swift */; };
+		2E659A672505DE5A00E5A746 /* RateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E659A642505DDB500E5A746 /* RateRepository.swift */; };
 		2EDE4D602504B6C1003376BA /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D5F2504B6C1003376BA /* Endpoint.swift */; };
 		2EDE4D632504B9CB003376BA /* APIEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D622504B9CB003376BA /* APIEndpointTests.swift */; };
 		2EDE4D652504BA0C003376BA /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D5F2504B6C1003376BA /* Endpoint.swift */; };
@@ -43,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E659A622505DDA700E5A746 /* RateRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateRepositoryTests.swift; sourceTree = "<group>"; };
+		2E659A642505DDB500E5A746 /* RateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateRepository.swift; sourceTree = "<group>"; };
 		2EDE4D5F2504B6C1003376BA /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		2EDE4D622504B9CB003376BA /* APIEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpointTests.swift; sourceTree = "<group>"; };
 		2EDE4D672504BEA1003376BA /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
@@ -90,6 +95,7 @@
 				2EDE4D662504BE50003376BA /* Protocol */,
 				2EDE4D672504BEA1003376BA /* APIEndpoint.swift */,
 				2EDE4D6C2504C4BC003376BA /* RateRequest.swift */,
+				2E659A642505DDB500E5A746 /* RateRepository.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -99,6 +105,7 @@
 			children = (
 				2EDE4D622504B9CB003376BA /* APIEndpointTests.swift */,
 				2EDE4D6E2504C878003376BA /* RateRequestTests.swift */,
+				2E659A622505DDA700E5A746 /* RateRepositoryTests.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -299,6 +306,7 @@
 				2EDEFD5225044D5400D7EB46 /* ViewController.swift in Sources */,
 				2EDEFD8E2504694200D7EB46 /* Currency.swift in Sources */,
 				2EDEFD8725045ACB00D7EB46 /* Observable.swift in Sources */,
+				2E659A652505DDB500E5A746 /* RateRepository.swift in Sources */,
 				2EDEFD4E25044D5400D7EB46 /* AppDelegate.swift in Sources */,
 				2EDEFD5025044D5400D7EB46 /* SceneDelegate.swift in Sources */,
 			);
@@ -308,12 +316,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E659A632505DDA700E5A746 /* RateRepositoryTests.swift in Sources */,
 				2EDE4D692504BF17003376BA /* APIEndpoint.swift in Sources */,
 				2EDE4D6F2504C878003376BA /* RateRequestTests.swift in Sources */,
 				2EDEFD9325046C5200D7EB46 /* Currency.swift in Sources */,
 				2EDE4D702504C87C003376BA /* Requestable.swift in Sources */,
 				2EDEFD8B25045F0D00D7EB46 /* Observable.swift in Sources */,
 				2EDEFD90250469D600D7EB46 /* CurrencyTests.swift in Sources */,
+				2E659A672505DE5A00E5A746 /* RateRepository.swift in Sources */,
 				2EDE4D632504B9CB003376BA /* APIEndpointTests.swift in Sources */,
 				2EDE4D722504CA90003376BA /* RateRequest.swift in Sources */,
 				2EDE4D652504BA0C003376BA /* Endpoint.swift in Sources */,
