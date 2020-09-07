@@ -58,7 +58,7 @@ class RateRequestTests: XCTestCase {
         XCTAssertEqual(currency.base, "USD")
         XCTAssertNotNil(currency.rates)
       case .failure(let error):
-        XCTAssertThrowsError(error)
+        XCTAssert(false, error.localizedDescription)
       }
 
       exceptation.fulfill()

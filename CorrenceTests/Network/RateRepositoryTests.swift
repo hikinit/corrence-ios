@@ -28,7 +28,7 @@ class RateRepositoryTests: XCTestCase {
       case .success(let currency):
         XCTAssertEqual(currency.base, "USD")
       case .failure(let error):
-        XCTAssertThrowsError(error)
+        XCTAssert(false, error.localizedDescription)
       }
 
       expectation.fulfill()

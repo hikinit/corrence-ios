@@ -21,7 +21,7 @@ class CurrencyTests: XCTestCase {
       XCTAssertEqual(currency.base, "USD")
       XCTAssertNotNil(currency.rates)
     } catch {
-      XCTAssertThrowsError(error)
+      XCTAssert(false, error.localizedDescription)
     }
   }
 }
