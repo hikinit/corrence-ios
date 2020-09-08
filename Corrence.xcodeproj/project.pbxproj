@@ -123,18 +123,10 @@
 		2E63893525075F6E000C24F8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2E63894C2507913F000C24F8 /* Protocol */,
 				2E6389362507603E000C24F8 /* RateViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		2E63893A25076047000C24F8 /* NIB */ = {
-			isa = PBXGroup;
-			children = (
 				2E6389372507603E000C24F8 /* RateViewController.xib */,
 			);
-			path = NIB;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		2E63893E250784BE000C24F8 /* Coordinator */ = {
@@ -295,7 +287,7 @@
 		2EDEFD952504765100D7EB46 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2E63893A25076047000C24F8 /* NIB */,
+				2E63894C2507913F000C24F8 /* Protocol */,
 				2E63893525075F6E000C24F8 /* Controller */,
 			);
 			path = View;
