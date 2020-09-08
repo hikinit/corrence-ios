@@ -41,11 +41,12 @@ class RateViewModelTests: XCTestCase {
 
   func testFetchCurrencyFail() {
     let expectation = XCTestExpectation()
-    sut = RateViewModel(repository: FailureMockRateRepository())
+    let customError = RequestableError.clientError
+    sut = RateViewModel(repository: FailureMockRateRepository(error:customError))
 
 
     sut.output.onError = { error in
-      XCTAssertEqual(error.localizedDescription, RequestableError.clientError.localizedDescription)
+      XCTAssertEqual(error.localizedDescription, customError.localizedDescription)
       expectation.fulfill()
     }
 
@@ -55,30 +56,3 @@ class RateViewModelTests: XCTestCase {
   }
 }
 
-// MARK: - Mock Helper Class
-fileprivate class MockRateRepository: RateRepository {
-  override init() {
-    super.init()
-  }
-
-  override func fetch(base: String, completion: @escaping (Result<Currency, Error>) -> Void) {
-    var currency = Currency(base: base, rates: [])
-    currency.rates.append(CurrencyRate(iso: "EUR", value: 0.84))
-    currency.rates.append(CurrencyRate(iso: "GBP", value: 0.75))
-    currency.rates.append(CurrencyRate(iso: "IDR", value: 14700))
-    currency.rates.append(CurrencyRate(iso: "JPY", value: 106))
-    currency.rates.append(CurrencyRate(iso: "SGD", value: 1.36))
-
-    completion(.success(currency))
-  }
-}
-
-fileprivate class FailureMockRateRepository: RateRepository {
-  override init() {
-    super.init()
-  }
-
-  override func fetch(base: String, completion: @escaping (Result<Currency, Error>) -> Void) {
-    completion(.failure(RequestableError.clientError))
-  }
-}
