@@ -25,5 +25,48 @@ class RateViewController: UIViewController, FromNIB {
   // MARK: - Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    setupBinding()
+    setupTableView()
+    viewModel.input.viewDidLoad()
   }
+
+  // MARK: - Binding
+  private func setupBinding() {
+    viewModel.output.title.bind { title in
+      DispatchQueue.main.async {
+        self.title = title
+      }
+    }
+
+    viewModel.output.reloadData = { [weak self] in
+      DispatchQueue.main.async {
+        self?.tableView.reloadData()
+      }
+    }
+  }
+
+  // MARK: - Table View
+  private var dataSource: UITableViewDataSource!
+  private func setupTableView() {
+    tableView.dataSource = self
+
+    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+  }
+}
+
+extension RateViewController: UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return viewModel.output.numberOfRows
+  }
+
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+
+    let currency = viewModel.output.currencyRates[indexPath.row]
+    cell.textLabel?.text = "\(currency.iso) \(currency.value)"
+
+    return cell
+  }
+
 }
