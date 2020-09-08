@@ -16,9 +16,10 @@ protocol RateViewModelInput {
 protocol RateViewModelOutput: AnyObject {
   var currencyBase: String { get set }
   var currencyRates: [CurrencyRate] { get set }
+  var numberOfRows: Int { get }
   var onError: ((Error) -> Void) { get set }
   var reloadData: (() -> Void) { get set }
-  var title: String { get }
+  var title: Observable<String> { get }
 }
 
 protocol RateViewModelType {
@@ -44,24 +45,27 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
   // MARK: - Output
   var currencyBase: String = "USD"
   var currencyRates: [CurrencyRate] = []
+  var numberOfRows: Int {
+    currencyRates.count
+  }
   var onError: ((Error) -> Void) = {_ in}
   var reloadData: (() -> Void) = {}
 
-  var title: String {
-    "\(currencyBase) Latest Rates"
+  var title: Observable<String> {
+    Observable("\(currencyBase) Latest Rates")
   }
 
+  // MARK: - Helper
   private func fetchRate(_ base: String) {
     output.currencyBase = base
     repository.fetch(base: base) { [weak self] in
       switch $0 {
       case .success(let currency):
         self?.output.currencyRates = currency.rates
+        self?.output.reloadData()
       case .failure(let error):
         self?.output.onError(error)
       }
-
-      self?.output.reloadData()
     }
   }
 
