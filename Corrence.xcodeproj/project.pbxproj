@@ -12,6 +12,9 @@
 		2E659A672505DE5A00E5A746 /* RateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E659A642505DDB500E5A746 /* RateRepository.swift */; };
 		2E659A6B2505EA8400E5A746 /* JSONRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E659A6A2505EA8400E5A746 /* JSONRequestable.swift */; };
 		2E659A6C2505EA8400E5A746 /* JSONRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E659A6A2505EA8400E5A746 /* JSONRequestable.swift */; };
+		2E659A6F2506137600E5A746 /* RateViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E659A6E2506137600E5A746 /* RateViewModelTests.swift */; };
+		2E659A73250613A000E5A746 /* RateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E659A72250613A000E5A746 /* RateViewModel.swift */; };
+		2E659A74250613A000E5A746 /* RateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E659A72250613A000E5A746 /* RateViewModel.swift */; };
 		2EDE4D602504B6C1003376BA /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D5F2504B6C1003376BA /* Endpoint.swift */; };
 		2EDE4D632504B9CB003376BA /* APIEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D622504B9CB003376BA /* APIEndpointTests.swift */; };
 		2EDE4D652504BA0C003376BA /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D5F2504B6C1003376BA /* Endpoint.swift */; };
@@ -51,6 +54,8 @@
 		2E659A622505DDA700E5A746 /* RateRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateRepositoryTests.swift; sourceTree = "<group>"; };
 		2E659A642505DDB500E5A746 /* RateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateRepository.swift; sourceTree = "<group>"; };
 		2E659A6A2505EA8400E5A746 /* JSONRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRequestable.swift; sourceTree = "<group>"; };
+		2E659A6E2506137600E5A746 /* RateViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewModelTests.swift; sourceTree = "<group>"; };
+		2E659A72250613A000E5A746 /* RateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewModel.swift; sourceTree = "<group>"; };
 		2EDE4D5F2504B6C1003376BA /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		2EDE4D622504B9CB003376BA /* APIEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpointTests.swift; sourceTree = "<group>"; };
 		2EDE4D672504BEA1003376BA /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
@@ -108,6 +113,22 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		2E659A6D2506135E00E5A746 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2E659A6E2506137600E5A746 /* RateViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2E659A712506139000E5A746 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2E659A72250613A000E5A746 /* RateViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		2EDE4D5C2504B330003376BA /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				2EDEFD832504581500D7EB46 /* Model */,
+				2E659A712506139000E5A746 /* ViewModel */,
 				2EDEFD952504765100D7EB46 /* View */,
 				2EDE4D5C2504B330003376BA /* Network */,
 				2EDEFD8C250467E600D7EB46 /* Support */,
@@ -171,6 +193,7 @@
 		2EDEFD6325044D5500D7EB46 /* CorrenceTests */ = {
 			isa = PBXGroup;
 			children = (
+				2E659A6D2506135E00E5A746 /* ViewModel */,
 				2EDE4D612504B9BF003376BA /* Network */,
 				2EDEFD97250476A800D7EB46 /* Model */,
 				2EDEFD9125046A3400D7EB46 /* rates.json */,
@@ -329,6 +352,7 @@
 				2EDEFD8725045ACB00D7EB46 /* Observable.swift in Sources */,
 				2E659A652505DDB500E5A746 /* RateRepository.swift in Sources */,
 				2EDEFD4E25044D5400D7EB46 /* AppDelegate.swift in Sources */,
+				2E659A73250613A000E5A746 /* RateViewModel.swift in Sources */,
 				2EDEFD5025044D5400D7EB46 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +363,7 @@
 			files = (
 				2E659A632505DDA700E5A746 /* RateRepositoryTests.swift in Sources */,
 				2EDE4D692504BF17003376BA /* APIEndpoint.swift in Sources */,
+				2E659A6F2506137600E5A746 /* RateViewModelTests.swift in Sources */,
 				2EDE4D6F2504C878003376BA /* RateRequestTests.swift in Sources */,
 				2EDEFD9325046C5200D7EB46 /* Currency.swift in Sources */,
 				2EDE4D702504C87C003376BA /* Requestable.swift in Sources */,
@@ -346,6 +371,7 @@
 				2EDEFD90250469D600D7EB46 /* CurrencyTests.swift in Sources */,
 				2E659A672505DE5A00E5A746 /* RateRepository.swift in Sources */,
 				2EDE4D632504B9CB003376BA /* APIEndpointTests.swift in Sources */,
+				2E659A74250613A000E5A746 /* RateViewModel.swift in Sources */,
 				2EDE4D722504CA90003376BA /* RateRequest.swift in Sources */,
 				2EDE4D652504BA0C003376BA /* Endpoint.swift in Sources */,
 				2EDEFD8925045E9C00D7EB46 /* ObservableTests.swift in Sources */,
