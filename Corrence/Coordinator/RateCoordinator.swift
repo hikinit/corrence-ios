@@ -16,7 +16,8 @@ class RateCoordinator: NavigationCoordinator {
   }
 
   func start() {
-    let controller = RateViewController(nibName: "RateViewController", bundle: nil)
+    let viewModel = RateViewModel(repository: RateRepository())
+    let controller = RateViewController(viewModel: viewModel)
     navigationController.pushViewController(controller, animated: true)
   }
 }

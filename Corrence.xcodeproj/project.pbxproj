@@ -15,6 +15,7 @@
 		2E6389432507874C000C24F8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6389422507874C000C24F8 /* AppCoordinator.swift */; };
 		2E63894725078E2E000C24F8 /* RateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63894625078E2E000C24F8 /* RateCoordinator.swift */; };
 		2E63894B25078F95000C24F8 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63894A25078F95000C24F8 /* NavigationCoordinator.swift */; };
+		2E63895025079250000C24F8 /* NIBLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63894F25079250000C24F8 /* NIBLoadable.swift */; };
 		2E659A632505DDA700E5A746 /* RateRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E659A622505DDA700E5A746 /* RateRepositoryTests.swift */; };
 		2E659A652505DDB500E5A746 /* RateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E659A642505DDB500E5A746 /* RateRepository.swift */; };
 		2E659A672505DE5A00E5A746 /* RateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E659A642505DDB500E5A746 /* RateRepository.swift */; };
@@ -65,6 +66,7 @@
 		2E6389422507874C000C24F8 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		2E63894625078E2E000C24F8 /* RateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCoordinator.swift; sourceTree = "<group>"; };
 		2E63894A25078F95000C24F8 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
+		2E63894F25079250000C24F8 /* NIBLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBLoadable.swift; sourceTree = "<group>"; };
 		2E659A622505DDA700E5A746 /* RateRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateRepositoryTests.swift; sourceTree = "<group>"; };
 		2E659A642505DDB500E5A746 /* RateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateRepository.swift; sourceTree = "<group>"; };
 		2E659A6A2505EA8400E5A746 /* JSONRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRequestable.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		2E63893525075F6E000C24F8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2E63894C2507913F000C24F8 /* Protocol */,
 				2E6389362507603E000C24F8 /* RateViewController.swift */,
 			);
 			path = Controller;
@@ -149,6 +152,14 @@
 			children = (
 				2E638940250784D2000C24F8 /* Coordinator.swift */,
 				2E63894A25078F95000C24F8 /* NavigationCoordinator.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		2E63894C2507913F000C24F8 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				2E63894F25079250000C24F8 /* NIBLoadable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -413,6 +424,7 @@
 				2E63894B25078F95000C24F8 /* NavigationCoordinator.swift in Sources */,
 				2EDEFD8725045ACB00D7EB46 /* Observable.swift in Sources */,
 				2E659A652505DDB500E5A746 /* RateRepository.swift in Sources */,
+				2E63895025079250000C24F8 /* NIBLoadable.swift in Sources */,
 				2EDEFD4E25044D5400D7EB46 /* AppDelegate.swift in Sources */,
 				2E659A73250613A000E5A746 /* RateViewModel.swift in Sources */,
 				2EDEFD5025044D5400D7EB46 /* SceneDelegate.swift in Sources */,
