@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17147" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17120"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RateViewHeader" customModule="Corrence" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="bOT-Mg-r4I" id="0S9-83-TI0"/>
+                <outlet property="flagImageView" destination="KBl-1T-Eij" id="JUn-mD-RDW"/>
+                <outlet property="view" destination="lYI-3D-psc" id="yZg-iR-b28"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lYI-3D-psc" userLabel="Header View">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOT-Mg-r4I">
+                    <rect key="frame" x="16" y="16" width="382" height="63"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2OS-jf-V3X">
+                            <rect key="frame" x="16" y="0.0" width="350" height="63"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag/usd" translatesAutoresizingMaskIntoConstraints="NO" id="KBl-1T-Eij">
+                                    <rect key="frame" x="0.0" y="15.5" width="48" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="48" id="33n-CM-y2e"/>
+                                        <constraint firstAttribute="height" constant="32" id="ohK-bv-ub8"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yL8-jd-yXA">
+                                    <rect key="frame" x="56" y="21.5" width="34.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1.00" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xpi-Yy-z0E">
+                                    <rect key="frame" x="98.5" y="20.5" width="251.5" height="22"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                                </textField>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="2OS-jf-V3X" firstAttribute="top" secondItem="bOT-Mg-r4I" secondAttribute="top" id="9Pa-at-4qu"/>
+                        <constraint firstItem="2OS-jf-V3X" firstAttribute="leading" secondItem="bOT-Mg-r4I" secondAttribute="leadingMargin" id="SId-6m-VY9"/>
+                        <constraint firstAttribute="bottom" secondItem="2OS-jf-V3X" secondAttribute="bottom" id="bRT-qL-hm7"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="2OS-jf-V3X" secondAttribute="trailing" id="xSq-hJ-o91"/>
+                    </constraints>
+                    <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="16" bottom="8" trailing="16"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="XeE-hu-h2U"/>
+            <constraints>
+                <constraint firstItem="bOT-Mg-r4I" firstAttribute="top" secondItem="lYI-3D-psc" secondAttribute="top" constant="16" id="4aV-6o-EGY"/>
+                <constraint firstItem="bOT-Mg-r4I" firstAttribute="leading" secondItem="lYI-3D-psc" secondAttribute="leading" constant="16" id="MCI-F0-0ke"/>
+                <constraint firstAttribute="bottom" secondItem="bOT-Mg-r4I" secondAttribute="bottom" constant="16" id="Qgs-Sm-1Ji"/>
+                <constraint firstAttribute="trailing" secondItem="bOT-Mg-r4I" secondAttribute="trailing" constant="16" id="be0-cg-o9z"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="910.14492753623199" y="-141.62946428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="flag/usd" width="48" height="32"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

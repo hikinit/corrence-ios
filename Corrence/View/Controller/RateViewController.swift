@@ -53,6 +53,7 @@ class RateViewController: UIViewController, FromNIB {
     let rateViewCellNib = UINib(nibName: RateViewCell.nibName, bundle: RateViewCell.nibBundle)
     tableView.register(rateViewCellNib, forCellReuseIdentifier: RateViewCell.nibName)
 
+    tableView.tableHeaderView = RateViewHeader(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 100))
     tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 80
   }
