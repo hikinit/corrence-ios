@@ -27,7 +27,7 @@ class RateViewModelTests: XCTestCase {
     sut.output.reloadData = { [self] in
       XCTAssertEqual(sut.title.value, "\(base) Latest Rates")
       XCTAssertEqual(sut.currencyBase, base)
-      XCTAssertEqual(sut.numberOfRows, 5)
+      XCTAssertEqual(sut.numberOfItems, 5)
 
       expectation.fulfill()
     }

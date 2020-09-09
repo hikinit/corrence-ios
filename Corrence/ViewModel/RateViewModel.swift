@@ -16,7 +16,7 @@ protocol RateViewModelInput {
 protocol RateViewModelOutput: AnyObject {
   var currencyBase: String { get set }
   var currencyRates: [CurrencyRate] { get set }
-  var numberOfRows: Int { get }
+  var numberOfItems: Int { get }
   var onError: ((Error) -> Void) { get set }
   var reloadData: (() -> Void) { get set }
   var title: Observable<String> { get }
@@ -29,6 +29,7 @@ protocol RateViewModelType {
 
 // MARK: - VM
 class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput {
+  private let repository: RateRepository
   init(repository: RateRepository) {
     self.repository = repository
   }
@@ -45,7 +46,7 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
   // MARK: - Output
   var currencyBase: String = "USD"
   var currencyRates: [CurrencyRate] = []
-  var numberOfRows: Int {
+  var numberOfItems: Int {
     currencyRates.count
   }
   var onError: ((Error) -> Void) = {_ in}
@@ -61,7 +62,7 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
     repository.fetch(base: base) { [weak self] in
       switch $0 {
       case .success(let currency):
-        self?.output.currencyRates = currency.rates
+        self?.output.currencyRates = currency.rates.sorted { $1.iso > $0.iso }
         self?.output.reloadData()
       case .failure(let error):
         self?.output.onError(error)
@@ -72,7 +73,4 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
   // MARK: - IO Declaration
   var input: RateViewModelInput { self }
   var output: RateViewModelOutput { self }
-
-  // MARK: - Privates
-  private let repository: RateRepository
 }

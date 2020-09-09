@@ -47,7 +47,6 @@ class RateViewController: UIViewController, FromNIB {
   }
 
   // MARK: - Table View
-  private var dataSource: UITableViewDataSource!
   private func setupTableView() {
     tableView.dataSource = self
 
@@ -57,7 +56,7 @@ class RateViewController: UIViewController, FromNIB {
 
 extension RateViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return viewModel.output.numberOfRows
+    return viewModel.output.numberOfItems
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
