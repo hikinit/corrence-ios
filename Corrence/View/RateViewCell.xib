@@ -19,14 +19,14 @@
                     <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ngg-5Z-ff5">
                         <rect key="frame" x="20" y="0.0" width="374" height="91"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="YzK-UJ-fMv">
-                                <rect key="frame" x="0.0" y="0.0" width="60" height="91"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="249" image="generic" translatesAutoresizingMaskIntoConstraints="NO" id="YzK-UJ-fMv">
+                                <rect key="frame" x="0.0" y="0.0" width="48" height="91"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="yVa-Ra-oiq"/>
+                                    <constraint firstAttribute="width" constant="48" id="yVa-Ra-oiq"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="USD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oR9-vU-eTU">
-                                <rect key="frame" x="68" y="0.0" width="220" height="91"/>
+                                <rect key="frame" x="56" y="0.0" width="232" height="91"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -65,4 +65,7 @@
             <point key="canvasLocation" x="18.840579710144929" y="86.71875"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="generic" width="54" height="54"/>
+    </resources>
 </document>

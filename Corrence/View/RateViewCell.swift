@@ -21,5 +21,16 @@ class RateViewCell: UITableViewCell, FromNIB {
     currencyNameLabel.text = viewModel.output.currencyIsoCode
     currencyValueLabel.text = viewModel.output.currencyValue
     currencySymbolLabel.text = viewModel.output.currencySymbol
+
+    setupCountryFlag(viewModel.output.currencyIsoCode.lowercased())
+  }
+
+  func setupCountryFlag(_ code: String) {
+    guard let image = UIImage(named: "flag/\(code)") else {
+      currencyFlagImageView.image = UIImage(named: "flag/generic")
+      return
+    }
+
+    currencyFlagImageView.image = image
   }
 }
