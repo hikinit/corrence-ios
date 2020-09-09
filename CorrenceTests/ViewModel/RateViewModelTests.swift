@@ -57,14 +57,14 @@ class RateViewModelTests: XCTestCase {
   func testCurrencyRateCellModel() {
     sut.input.viewDidLoad()
 
-    var indexPath = IndexPath(row: 1, section: 0)
+    var indexPath = IndexPath(row: 0, section: 0)
     sut.input.selectItemAtIndexPath(indexPath)
 
     var sut = self.sut.output.selectedItemModel
 
-    XCTAssertEqual(sut.output.currencyIsoCode, "EUR")
-    XCTAssertEqual(sut.output.currencyValue, "0.849407")
-    XCTAssertEqual(sut.output.currencySymbol, "€")
+    XCTAssertEqual(sut.output.currencyIsoCode, "BTC")
+    XCTAssertEqual(sut.output.currencyValue, "0.000099")
+    XCTAssertEqual(sut.output.currencySymbol, "BTC")
 
     indexPath = IndexPath(row: 3, section: 0)
     self.sut.input.selectItemAtIndexPath(indexPath)
