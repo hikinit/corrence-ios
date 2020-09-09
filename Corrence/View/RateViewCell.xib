@@ -19,7 +19,7 @@
                     <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ngg-5Z-ff5">
                         <rect key="frame" x="20" y="0.0" width="374" height="91"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="249" image="generic" translatesAutoresizingMaskIntoConstraints="NO" id="YzK-UJ-fMv">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="249" image="flag/generic" translatesAutoresizingMaskIntoConstraints="NO" id="YzK-UJ-fMv">
                                 <rect key="frame" x="0.0" y="0.0" width="48" height="91"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="yVa-Ra-oiq"/>
@@ -66,6 +66,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="generic" width="54" height="54"/>
+        <image name="flag/generic" width="54" height="54"/>
     </resources>
 </document>
