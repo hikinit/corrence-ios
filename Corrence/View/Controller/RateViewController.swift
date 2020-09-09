@@ -12,7 +12,7 @@ class RateViewController: UIViewController, FromNIB {
   @IBOutlet weak var tableView: UITableView!
 
   // MARK: - Initializer
-  private var viewModel: RateViewModel
+  private var viewModel: RateViewModelType
   init(viewModel: RateViewModel) {
     self.viewModel = viewModel
     super.init(nibName: Self.nibName, bundle: Self.nibBundle)
@@ -50,7 +50,10 @@ class RateViewController: UIViewController, FromNIB {
   private func setupTableView() {
     tableView.dataSource = self
 
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    let rateViewCellNib = UINib(nibName: RateViewCell.nibName, bundle: RateViewCell.nibBundle)
+    tableView.register(rateViewCellNib, forCellReuseIdentifier: RateViewCell.nibName)
+
+    tableView.estimatedRowHeight = 0
   }
 }
 
@@ -60,10 +63,15 @@ extension RateViewController: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: RateViewCell.nibName,
+            for: indexPath) as? RateViewCell else {
+      return UITableViewCell()
+    }
 
-    let currency = viewModel.output.currencyRates[indexPath.row]
-    cell.textLabel?.text = "\(currency.iso) \(currency.value)"
+    viewModel.input.selectItemAtIndexPath(indexPath)
+    let rateViewCellModel = viewModel.output.selectedItemModel
+    cell.configure(with: rateViewCellModel)
 
     return cell
   }

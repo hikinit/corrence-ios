@@ -7,12 +7,12 @@
 
 import UIKit
 
-protocol FromNIB {
+protocol FromNIB: UIResponder {
   static var nibName: String { get }
   static var nibBundle: Bundle { get }
 }
 
-extension FromNIB where Self: UIViewController {
+extension FromNIB {
   static var nibName: String {
     String(describing: Self.self)
   }
