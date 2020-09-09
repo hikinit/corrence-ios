@@ -66,13 +66,13 @@ class RateViewModelTests: XCTestCase {
     XCTAssertEqual(sut.output.currencyValue, "0.849407")
     XCTAssertEqual(sut.output.currencySymbol, "€")
 
-    indexPath = IndexPath(row: 0, section: 0)
+    indexPath = IndexPath(row: 3, section: 0)
     self.sut.input.selectItemAtIndexPath(indexPath)
     sut = self.sut.output.selectedItemModel
 
-    XCTAssertEqual(sut.output.currencyIsoCode, "BTC")
-    XCTAssertEqual(sut.output.currencyValue, "0.000099")
-    XCTAssertEqual(sut.output.currencySymbol, "BTC")
+    XCTAssertEqual(sut.output.currencyIsoCode, "IDR")
+    XCTAssertEqual(sut.output.currencyValue, "14,838.59")
+    XCTAssertEqual(sut.output.currencySymbol, "IDR")
   }
 }
 

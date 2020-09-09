@@ -32,27 +32,33 @@ class RateViewCellModel: RateViewCellModelType, RateViewCellModelInput, RateView
   }
 
   var currencyValue: String {
-    numberFormatter().string(from: NSNumber(value: rate.value))!
+    let maximumFraction = rate.value > 0.009 ? 2 : 6
+    let fraction = (2, maximumFraction)
+    return numberFormatter(style: .none, fraction: fraction)
+      .string(from: NSNumber(value: rate.value))!
   }
 
   var currencySymbol: String {
     let nf = numberFormatter(style: .currency, fraction: (0, 0))
     let currency = nf.string(from: NSNumber(value: rate.value))!
 
-    return currency.filter { !$0.isNumber && !$0.isWhitespace }
+    return currency.filter {
+      !$0.isNumber &&
+        !$0.isWhitespace &&
+        !$0.isPunctuation
+    }
   }
 
   // MARK: - Helper
-  func numberFormatter(
-    style: NumberFormatter.Style = .none,
-    fraction: (Int, Int) = (3, 6)
-  ) -> NumberFormatter {
+  func numberFormatter(style: NumberFormatter.Style, fraction: (Int, Int)) -> NumberFormatter {
     let formatter = NumberFormatter()
     formatter.allowsFloats = true
     formatter.minimumFractionDigits = fraction.0
     formatter.maximumFractionDigits = fraction.1
     formatter.currencyCode = currencyIsoCode
     formatter.numberStyle = style
+    formatter.groupingSize = 3
+    formatter.usesGroupingSeparator = true
 
     return formatter
   }
