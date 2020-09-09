@@ -10,6 +10,7 @@ import Foundation
 // MARK: - IO Protocol
 protocol RateViewModelInput {
   func selectBase(_ string: String)
+  func selectItemAtIndexPath(_ indexPath: IndexPath)
   func viewDidLoad()
 }
 
@@ -19,6 +20,7 @@ protocol RateViewModelOutput: AnyObject {
   var numberOfItems: Int { get }
   var onError: ((Error) -> Void) { get set }
   var reloadData: (() -> Void) { get set }
+  var selectedItemModel: RateViewCellModelType { get }
   var title: Observable<String> { get }
 }
 
@@ -39,6 +41,11 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
     fetchRate(base)
   }
 
+  private var selectedIndexPath = IndexPath()
+  func selectItemAtIndexPath(_ indexPath: IndexPath) {
+    selectedIndexPath = indexPath
+  }
+
   func viewDidLoad() {
     fetchRate(currencyBase)
   }
@@ -51,6 +58,10 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
   }
   var onError: ((Error) -> Void) = {_ in}
   var reloadData: (() -> Void) = {}
+  var selectedItemModel: RateViewCellModelType {
+    let rate = currencyRates[selectedIndexPath.row]
+    return RateViewCellModel(rate: rate)
+  }
 
   var title: Observable<String> {
     Observable("\(currencyBase) Latest Rates")

@@ -27,7 +27,7 @@ class RateViewModelTests: XCTestCase {
     sut.output.reloadData = { [self] in
       XCTAssertEqual(sut.title.value, "\(base) Latest Rates")
       XCTAssertEqual(sut.currencyBase, base)
-      XCTAssertEqual(sut.numberOfItems, 5)
+      XCTAssertEqual(sut.numberOfItems, 6)
 
       expectation.fulfill()
     }
@@ -44,7 +44,6 @@ class RateViewModelTests: XCTestCase {
     let customError = RequestableError.clientError
     sut = RateViewModel(repository: FailureMockRateRepository(error:customError))
 
-
     sut.output.onError = { error in
       XCTAssertEqual(error.localizedDescription, customError.localizedDescription)
       expectation.fulfill()
@@ -53,6 +52,27 @@ class RateViewModelTests: XCTestCase {
     sut.input.viewDidLoad()
 
     wait(for: [expectation], timeout: 1.0)
+  }
+
+  func testCurrencyRateCellModel() {
+    sut.input.viewDidLoad()
+
+    var indexPath = IndexPath(row: 1, section: 0)
+    sut.input.selectItemAtIndexPath(indexPath)
+
+    var sut = self.sut.output.selectedItemModel
+
+    XCTAssertEqual(sut.output.currencyIsoCode, "EUR")
+    XCTAssertEqual(sut.output.currencyValue, "0.849407")
+    XCTAssertEqual(sut.output.currencySymbol, "€")
+
+    indexPath = IndexPath(row: 0, section: 0)
+    self.sut.input.selectItemAtIndexPath(indexPath)
+    sut = self.sut.output.selectedItemModel
+
+    XCTAssertEqual(sut.output.currencyIsoCode, "BTC")
+    XCTAssertEqual(sut.output.currencyValue, "0.000099")
+    XCTAssertEqual(sut.output.currencySymbol, "BTC")
   }
 }
 

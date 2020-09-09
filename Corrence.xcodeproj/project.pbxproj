@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E2BD0172508812E0002BD08 /* RateViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BD0162508812E0002BD08 /* RateViewCellModel.swift */; };
+		2E2BD0182508812E0002BD08 /* RateViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BD0162508812E0002BD08 /* RateViewCellModel.swift */; };
 		2E63893225075A82000C24F8 /* MockRateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63893125075A82000C24F8 /* MockRateRepository.swift */; };
 		2E63893425075A96000C24F8 /* FailureMockRateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63893325075A96000C24F8 /* FailureMockRateRepository.swift */; };
 		2E6389382507603E000C24F8 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6389362507603E000C24F8 /* RateViewController.swift */; };
@@ -58,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E2BD0162508812E0002BD08 /* RateViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewCellModel.swift; sourceTree = "<group>"; };
 		2E63893125075A82000C24F8 /* MockRateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRateRepository.swift; sourceTree = "<group>"; };
 		2E63893325075A96000C24F8 /* FailureMockRateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureMockRateRepository.swift; sourceTree = "<group>"; };
 		2E6389362507603E000C24F8 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				2E659A72250613A000E5A746 /* RateViewModel.swift */,
+				2E2BD0162508812E0002BD08 /* RateViewCellModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -407,6 +411,7 @@
 				2EDE4D6B2504C2EF003376BA /* Requestable.swift in Sources */,
 				2E638941250784D2000C24F8 /* Coordinator.swift in Sources */,
 				2E659A6B2505EA8400E5A746 /* JSONRequestable.swift in Sources */,
+				2E2BD0172508812E0002BD08 /* RateViewCellModel.swift in Sources */,
 				2EDE4D602504B6C1003376BA /* Endpoint.swift in Sources */,
 				2E63894725078E2E000C24F8 /* RateCoordinator.swift in Sources */,
 				2EDE4D6D2504C4BC003376BA /* RateRequest.swift in Sources */,
@@ -431,6 +436,7 @@
 				2EDE4D692504BF17003376BA /* APIEndpoint.swift in Sources */,
 				2E659A6F2506137600E5A746 /* RateViewModelTests.swift in Sources */,
 				2EDE4D6F2504C878003376BA /* RateRequestTests.swift in Sources */,
+				2E2BD0182508812E0002BD08 /* RateViewCellModel.swift in Sources */,
 				2EDEFD9325046C5200D7EB46 /* Currency.swift in Sources */,
 				2EDE4D702504C87C003376BA /* Requestable.swift in Sources */,
 				2EDEFD8B25045F0D00D7EB46 /* Observable.swift in Sources */,
