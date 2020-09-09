@@ -15,6 +15,7 @@ class RateViewCell: UITableViewCell, FromNIB {
 
   override func awakeFromNib() {
     super.awakeFromNib()
+    setupUI()
   }
 
   func configure(with viewModel: RateViewCellModelType) {
@@ -25,12 +26,17 @@ class RateViewCell: UITableViewCell, FromNIB {
     setupCountryFlag(viewModel.output.currencyIsoCode.lowercased())
   }
 
-  func setupCountryFlag(_ code: String) {
+  private func setupCountryFlag(_ code: String) {
     guard let image = UIImage(named: "flag/\(code)") else {
       currencyFlagImageView.image = UIImage(named: "flag/generic")
       return
     }
 
     currencyFlagImageView.image = image
+  }
+
+  private func setupUI() {
+    currencyFlagImageView.layer.cornerRadius = 4
+    currencyFlagImageView.clipsToBounds = true
   }
 }
