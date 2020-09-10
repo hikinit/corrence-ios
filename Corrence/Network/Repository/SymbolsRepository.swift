@@ -13,10 +13,29 @@ protocol SymbolRepositoryType {
 }
 
 struct SymbolsRepository: SymbolRepositoryType {
-  func fetch(completion: @escaping CompletionHandler) {
-    let endpoint = APIEndpoint.symbols
-    let request = JSONRequest<Symbols>(endpoint: endpoint)
+  let cacheRepository: CacheSymbolsRepository
+  let externalRepository: ExternalSymbolsRepository
 
-    request.load(completion: completion)
+  func fetch(completion: @escaping CompletionHandler) {
+    cacheRepository.fetch { cache in
+      guard case let .success(cachedSymbols) = cache else {
+        loadExternaly(completion: completion)
+        return
+      }
+
+      completion(.success(cachedSymbols))
+    }
+  }
+
+  private func loadExternaly(completion: @escaping CompletionHandler) {
+    externalRepository.fetch { result in
+      switch result {
+      case .success(let symbols):
+        cacheRepository.cache(data: symbols)
+        completion(.success(symbols))
+      case .failure(let error):
+        completion(.failure(error))
+      }
+    }
   }
 }

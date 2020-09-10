@@ -12,14 +12,14 @@ struct Symbol {
   let description: String
 }
 
-extension Symbol: Decodable {}
+extension Symbol: Codable {}
 extension Symbol: Equatable {}
 
 struct Symbols {
   let list: [String: Symbol]
 }
 
-extension Symbols: Decodable {
+extension Symbols: Codable {
   enum CodingKeys: String, CodingKey {
     case list = "symbols"
   }

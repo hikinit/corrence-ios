@@ -12,6 +12,12 @@
 		2E3591D8250A050100DB80EF /* SymbolsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3591D7250A050100DB80EF /* SymbolsRepository.swift */; };
 		2E3591DA250A093800DB80EF /* SymbolsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3591D9250A093800DB80EF /* SymbolsRepositoryTests.swift */; };
 		2E3591DB250A098000DB80EF /* SymbolsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3591D7250A050100DB80EF /* SymbolsRepository.swift */; };
+		2E3591E0250A116700DB80EF /* Cacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3591DF250A116700DB80EF /* Cacheable.swift */; };
+		2E3591E1250A122400DB80EF /* Cacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3591DF250A116700DB80EF /* Cacheable.swift */; };
+		2E3591E3250A135A00DB80EF /* CacheSymbolsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3591E2250A135A00DB80EF /* CacheSymbolsRepository.swift */; };
+		2E3591E4250A136900DB80EF /* CacheSymbolsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3591E2250A135A00DB80EF /* CacheSymbolsRepository.swift */; };
+		2E3591E6250A1FBA00DB80EF /* ExternalSymbolsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3591E5250A1FBA00DB80EF /* ExternalSymbolsRepository.swift */; };
+		2E3591E7250A1FBA00DB80EF /* ExternalSymbolsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3591E5250A1FBA00DB80EF /* ExternalSymbolsRepository.swift */; };
 		2E630E6F25099BFE00616D05 /* RateViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E630E6E25099BFE00616D05 /* RateViewHeader.swift */; };
 		2E630E7125099CE000616D05 /* RateViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E630E7025099CE000616D05 /* RateViewHeader.xib */; };
 		2E63893225075A82000C24F8 /* MockRateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63893125075A82000C24F8 /* MockRateRepository.swift */; };
@@ -75,6 +81,9 @@
 		2E2BD0162508812E0002BD08 /* RateViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewCellModel.swift; sourceTree = "<group>"; };
 		2E3591D7250A050100DB80EF /* SymbolsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsRepository.swift; sourceTree = "<group>"; };
 		2E3591D9250A093800DB80EF /* SymbolsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsRepositoryTests.swift; sourceTree = "<group>"; };
+		2E3591DF250A116700DB80EF /* Cacheable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cacheable.swift; sourceTree = "<group>"; };
+		2E3591E2250A135A00DB80EF /* CacheSymbolsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheSymbolsRepository.swift; sourceTree = "<group>"; };
+		2E3591E5250A1FBA00DB80EF /* ExternalSymbolsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalSymbolsRepository.swift; sourceTree = "<group>"; };
 		2E630E6E25099BFE00616D05 /* RateViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateViewHeader.swift; sourceTree = "<group>"; };
 		2E630E7025099CE000616D05 /* RateViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateViewHeader.xib; sourceTree = "<group>"; };
 		2E63893125075A82000C24F8 /* MockRateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRateRepository.swift; sourceTree = "<group>"; };
@@ -186,6 +195,8 @@
 			children = (
 				2E659A642505DDB500E5A746 /* RateRepository.swift */,
 				2E3591D7250A050100DB80EF /* SymbolsRepository.swift */,
+				2E3591E2250A135A00DB80EF /* CacheSymbolsRepository.swift */,
+				2E3591E5250A1FBA00DB80EF /* ExternalSymbolsRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -243,6 +254,7 @@
 				2EDE4D5F2504B6C1003376BA /* Endpoint.swift */,
 				2EDE4D6A2504C2EF003376BA /* Requestable.swift */,
 				2E659A6A2505EA8400E5A746 /* JSONRequestable.swift */,
+				2E3591DF250A116700DB80EF /* Cacheable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -452,6 +464,7 @@
 			files = (
 				2EDE4D682504BEA1003376BA /* APIEndpoint.swift in Sources */,
 				2EDE4D6B2504C2EF003376BA /* Requestable.swift in Sources */,
+				2E3591E0250A116700DB80EF /* Cacheable.swift in Sources */,
 				2EF8EF842509E0B3005BF6E7 /* Debouncer.swift in Sources */,
 				2EF8EF922509F8AC005BF6E7 /* Symbols.swift in Sources */,
 				2E638941250784D2000C24F8 /* Coordinator.swift in Sources */,
@@ -463,6 +476,7 @@
 				2E63894725078E2E000C24F8 /* RateCoordinator.swift in Sources */,
 				2E3591D8250A050100DB80EF /* SymbolsRepository.swift in Sources */,
 				2EDE4D6D2504C4BC003376BA /* JSONRequest.swift in Sources */,
+				2E3591E3250A135A00DB80EF /* CacheSymbolsRepository.swift in Sources */,
 				2E6389432507874C000C24F8 /* AppCoordinator.swift in Sources */,
 				2E6389382507603E000C24F8 /* RateViewController.swift in Sources */,
 				2EDEFD8E2504694200D7EB46 /* Currency.swift in Sources */,
@@ -472,6 +486,7 @@
 				2E63895025079250000C24F8 /* FromNIB.swift in Sources */,
 				2EDEFD4E25044D5400D7EB46 /* AppDelegate.swift in Sources */,
 				2E659A73250613A000E5A746 /* RateViewModel.swift in Sources */,
+				2E3591E6250A1FBA00DB80EF /* ExternalSymbolsRepository.swift in Sources */,
 				2EDEFD5025044D5400D7EB46 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,6 +498,7 @@
 				2E659A632505DDA700E5A746 /* RateRepositoryTests.swift in Sources */,
 				2EDE4D692504BF17003376BA /* APIEndpoint.swift in Sources */,
 				2E659A6F2506137600E5A746 /* RateViewModelTests.swift in Sources */,
+				2E3591E1250A122400DB80EF /* Cacheable.swift in Sources */,
 				2E3591DB250A098000DB80EF /* SymbolsRepository.swift in Sources */,
 				2EF8EF902509F74A005BF6E7 /* SymbolsTests.swift in Sources */,
 				2EDE4D6F2504C878003376BA /* JSONRequestTests.swift in Sources */,
@@ -491,6 +507,8 @@
 				2EDEFD9325046C5200D7EB46 /* Currency.swift in Sources */,
 				2E3591DA250A093800DB80EF /* SymbolsRepositoryTests.swift in Sources */,
 				2EDE4D702504C87C003376BA /* Requestable.swift in Sources */,
+				2E3591E7250A1FBA00DB80EF /* ExternalSymbolsRepository.swift in Sources */,
+				2E3591E4250A136900DB80EF /* CacheSymbolsRepository.swift in Sources */,
 				2EDEFD8B25045F0D00D7EB46 /* Observable.swift in Sources */,
 				2EDEFD90250469D600D7EB46 /* CurrencyTests.swift in Sources */,
 				2E659A672505DE5A00E5A746 /* RateRepository.swift in Sources */,

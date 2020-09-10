@@ -12,7 +12,9 @@ class SymbolsRepositoryTests: XCTestCase {
 
   override func setUp() {
     super.setUp()
-    sut = SymbolsRepository()
+    sut = SymbolsRepository(
+      cacheRepository: CacheSymbolsRepository(),
+      externalRepository: ExternalSymbolsRepository())
   }
 
   override func tearDown() {
@@ -27,6 +29,7 @@ class SymbolsRepositoryTests: XCTestCase {
       switch result {
       case .success(let symbols):
         XCTAssertNotEqual(symbols.list.count, 0)
+        XCTAssertEqual(symbols.list["AUD"]?.code, "AUD")
       case .failure(let error):
         XCTAssert(false, error.localizedDescription)
       }
