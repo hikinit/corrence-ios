@@ -32,15 +32,16 @@ class RateViewController: UIViewController, FromNIB {
     super.viewDidLoad()
 
     setupBinding()
+    setupSearchBar()
     setupTableView()
     viewModel.input.viewDidLoad()
   }
 
   // MARK: - Binding
   private func setupBinding() {
-    viewModel.output.title.bind { title in
+    viewModel.output.title.bind { [weak self] title in
       DispatchQueue.main.async {
-        self.title = title
+        self?.title = title
       }
     }
 
@@ -49,6 +50,18 @@ class RateViewController: UIViewController, FromNIB {
         self?.tableView.reloadData()
       }
     }
+  }
+
+  // MARK: - Search Bar
+  private func setupSearchBar() {
+    let search = UISearchController(searchResultsController: nil)
+
+    search.searchResultsUpdater = self
+    search.obscuresBackgroundDuringPresentation = false
+    search.searchBar.placeholder = "Search currency..."
+
+    navigationItem.searchController = search
+    navigationItem.hidesSearchBarWhenScrolling = false
   }
 
   // MARK: - Table View
@@ -66,11 +79,18 @@ class RateViewController: UIViewController, FromNIB {
 // MARK: - Header View Delegate
 extension RateViewController: RateViewHeaderDelegate {
   func currencyAmountDidReturn(amount: String) {
-    print("CALLED")
     viewModel.input.inputCurrencyAmount(amount)
   }
 }
 
+// MARK: - Search Delegate
+extension RateViewController: UISearchResultsUpdating {
+  func updateSearchResults(for searchController: UISearchController) {
+    guard let searchText = searchController.searchBar.text?.lowercased() else { return }
+
+    print(searchText)
+  }
+}
 
 // MARK: - Table Data Source
 extension RateViewController: UITableViewDataSource {
