@@ -52,6 +52,10 @@
 		2EDEFD9225046A3400D7EB46 /* rates.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EDEFD9125046A3400D7EB46 /* rates.json */; };
 		2EDEFD9325046C5200D7EB46 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD8D2504694200D7EB46 /* Currency.swift */; };
 		2EF8EF842509E0B3005BF6E7 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF8EF832509E0B3005BF6E7 /* Debouncer.swift */; };
+		2EF8EF8E2509F72B005BF6E7 /* symbols.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EF8EF8D2509F72B005BF6E7 /* symbols.json */; };
+		2EF8EF902509F74A005BF6E7 /* SymbolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF8EF8F2509F74A005BF6E7 /* SymbolsTests.swift */; };
+		2EF8EF922509F8AC005BF6E7 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF8EF912509F8AC005BF6E7 /* Symbols.swift */; };
+		2EF8EF932509F8AC005BF6E7 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF8EF912509F8AC005BF6E7 /* Symbols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +108,9 @@
 		2EDEFD8F250469D600D7EB46 /* CurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTests.swift; sourceTree = "<group>"; };
 		2EDEFD9125046A3400D7EB46 /* rates.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rates.json; sourceTree = "<group>"; };
 		2EF8EF832509E0B3005BF6E7 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
+		2EF8EF8D2509F72B005BF6E7 /* symbols.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = symbols.json; sourceTree = "<group>"; };
+		2EF8EF8F2509F74A005BF6E7 /* SymbolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsTests.swift; sourceTree = "<group>"; };
+		2EF8EF912509F8AC005BF6E7 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +280,7 @@
 				2EDE4D612504B9BF003376BA /* Network */,
 				2EDEFD97250476A800D7EB46 /* Model */,
 				2EDEFD9125046A3400D7EB46 /* rates.json */,
+				2EF8EF8D2509F72B005BF6E7 /* symbols.json */,
 				2EDEFD6625044D5500D7EB46 /* Info.plist */,
 			);
 			path = CorrenceTests;
@@ -283,6 +291,7 @@
 			children = (
 				2EDEFD8625045ACB00D7EB46 /* Observable.swift */,
 				2EDEFD8D2504694200D7EB46 /* Currency.swift */,
+				2EF8EF912509F8AC005BF6E7 /* Symbols.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -317,6 +326,7 @@
 			children = (
 				2EDEFD8825045E9C00D7EB46 /* ObservableTests.swift */,
 				2EDEFD8F250469D600D7EB46 /* CurrencyTests.swift */,
+				2EF8EF8F2509F74A005BF6E7 /* SymbolsTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -422,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EDEFD9225046A3400D7EB46 /* rates.json in Resources */,
+				2EF8EF8E2509F72B005BF6E7 /* symbols.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +446,7 @@
 				2EDE4D682504BEA1003376BA /* APIEndpoint.swift in Sources */,
 				2EDE4D6B2504C2EF003376BA /* Requestable.swift in Sources */,
 				2EF8EF842509E0B3005BF6E7 /* Debouncer.swift in Sources */,
+				2EF8EF922509F8AC005BF6E7 /* Symbols.swift in Sources */,
 				2E638941250784D2000C24F8 /* Coordinator.swift in Sources */,
 				2E630E6F25099BFE00616D05 /* RateViewHeader.swift in Sources */,
 				2E659A6B2505EA8400E5A746 /* JSONRequestable.swift in Sources */,
@@ -463,7 +475,9 @@
 				2E659A632505DDA700E5A746 /* RateRepositoryTests.swift in Sources */,
 				2EDE4D692504BF17003376BA /* APIEndpoint.swift in Sources */,
 				2E659A6F2506137600E5A746 /* RateViewModelTests.swift in Sources */,
+				2EF8EF902509F74A005BF6E7 /* SymbolsTests.swift in Sources */,
 				2EDE4D6F2504C878003376BA /* RateRequestTests.swift in Sources */,
+				2EF8EF932509F8AC005BF6E7 /* Symbols.swift in Sources */,
 				2E2BD0182508812E0002BD08 /* RateViewCellModel.swift in Sources */,
 				2EDEFD9325046C5200D7EB46 /* Currency.swift in Sources */,
 				2EDE4D702504C87C003376BA /* Requestable.swift in Sources */,
