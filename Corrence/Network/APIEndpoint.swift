@@ -10,6 +10,7 @@ import Foundation
 enum APIEndpoint {
   case latest(base: String)
   case convert(from: String, to: String)
+  case symbols
 }
 
 extension APIEndpoint: Endpoint {
@@ -23,6 +24,8 @@ extension APIEndpoint: Endpoint {
       return "latest"
     case .convert(_, _):
       return "convert"
+    case .symbols:
+      return "symbols"
     }
   }
 
@@ -35,6 +38,8 @@ extension APIEndpoint: Endpoint {
         Parameter(name: "from", value: from),
         Parameter(name: "to", value: to),
       ]
+    default:
+      return nil
     }
   }
 

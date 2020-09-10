@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2E2BD0172508812E0002BD08 /* RateViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BD0162508812E0002BD08 /* RateViewCellModel.swift */; };
 		2E2BD0182508812E0002BD08 /* RateViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BD0162508812E0002BD08 /* RateViewCellModel.swift */; };
+		2E3591D8250A050100DB80EF /* SymbolsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3591D7250A050100DB80EF /* SymbolsRepository.swift */; };
+		2E3591DA250A093800DB80EF /* SymbolsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3591D9250A093800DB80EF /* SymbolsRepositoryTests.swift */; };
+		2E3591DB250A098000DB80EF /* SymbolsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3591D7250A050100DB80EF /* SymbolsRepository.swift */; };
 		2E630E6F25099BFE00616D05 /* RateViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E630E6E25099BFE00616D05 /* RateViewHeader.swift */; };
 		2E630E7125099CE000616D05 /* RateViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E630E7025099CE000616D05 /* RateViewHeader.xib */; };
 		2E63893225075A82000C24F8 /* MockRateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63893125075A82000C24F8 /* MockRateRepository.swift */; };
@@ -70,6 +73,8 @@
 
 /* Begin PBXFileReference section */
 		2E2BD0162508812E0002BD08 /* RateViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewCellModel.swift; sourceTree = "<group>"; };
+		2E3591D7250A050100DB80EF /* SymbolsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsRepository.swift; sourceTree = "<group>"; };
+		2E3591D9250A093800DB80EF /* SymbolsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsRepositoryTests.swift; sourceTree = "<group>"; };
 		2E630E6E25099BFE00616D05 /* RateViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateViewHeader.swift; sourceTree = "<group>"; };
 		2E630E7025099CE000616D05 /* RateViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateViewHeader.xib; sourceTree = "<group>"; };
 		2E63893125075A82000C24F8 /* MockRateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRateRepository.swift; sourceTree = "<group>"; };
@@ -180,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				2E659A642505DDB500E5A746 /* RateRepository.swift */,
+				2E3591D7250A050100DB80EF /* SymbolsRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -226,6 +232,7 @@
 				2EDE4D622504B9CB003376BA /* APIEndpointTests.swift */,
 				2EDE4D6E2504C878003376BA /* JSONRequestTests.swift */,
 				2E659A622505DDA700E5A746 /* RateRepositoryTests.swift */,
+				2E3591D9250A093800DB80EF /* SymbolsRepositoryTests.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -454,6 +461,7 @@
 				2E2BD0172508812E0002BD08 /* RateViewCellModel.swift in Sources */,
 				2EDE4D602504B6C1003376BA /* Endpoint.swift in Sources */,
 				2E63894725078E2E000C24F8 /* RateCoordinator.swift in Sources */,
+				2E3591D8250A050100DB80EF /* SymbolsRepository.swift in Sources */,
 				2EDE4D6D2504C4BC003376BA /* JSONRequest.swift in Sources */,
 				2E6389432507874C000C24F8 /* AppCoordinator.swift in Sources */,
 				2E6389382507603E000C24F8 /* RateViewController.swift in Sources */,
@@ -475,11 +483,13 @@
 				2E659A632505DDA700E5A746 /* RateRepositoryTests.swift in Sources */,
 				2EDE4D692504BF17003376BA /* APIEndpoint.swift in Sources */,
 				2E659A6F2506137600E5A746 /* RateViewModelTests.swift in Sources */,
+				2E3591DB250A098000DB80EF /* SymbolsRepository.swift in Sources */,
 				2EF8EF902509F74A005BF6E7 /* SymbolsTests.swift in Sources */,
 				2EDE4D6F2504C878003376BA /* JSONRequestTests.swift in Sources */,
 				2EF8EF932509F8AC005BF6E7 /* Symbols.swift in Sources */,
 				2E2BD0182508812E0002BD08 /* RateViewCellModel.swift in Sources */,
 				2EDEFD9325046C5200D7EB46 /* Currency.swift in Sources */,
+				2E3591DA250A093800DB80EF /* SymbolsRepositoryTests.swift in Sources */,
 				2EDE4D702504C87C003376BA /* Requestable.swift in Sources */,
 				2EDEFD8B25045F0D00D7EB46 /* Observable.swift in Sources */,
 				2EDEFD90250469D600D7EB46 /* CurrencyTests.swift in Sources */,
