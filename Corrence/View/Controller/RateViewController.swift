@@ -10,6 +10,11 @@ import UIKit
 class RateViewController: UIViewController, FromNIB {
   // MARK: - Outlet
   @IBOutlet weak var tableView: UITableView!
+  lazy var headerView: RateViewHeader = {
+    let view = RateViewHeader(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 100))
+    view.delegate = self
+    return view
+  }()
 
   // MARK: - Initializer
   private var viewModel: RateViewModelType
@@ -48,17 +53,26 @@ class RateViewController: UIViewController, FromNIB {
 
   // MARK: - Table View
   private func setupTableView() {
-    tableView.dataSource = self
-
     let rateViewCellNib = UINib(nibName: RateViewCell.nibName, bundle: RateViewCell.nibBundle)
     tableView.register(rateViewCellNib, forCellReuseIdentifier: RateViewCell.nibName)
 
-    tableView.tableHeaderView = RateViewHeader(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 100))
+    tableView.dataSource = self
+    tableView.tableHeaderView = headerView
     tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 80
   }
 }
 
+// MARK: - Header View Delegate
+extension RateViewController: RateViewHeaderDelegate {
+  func currencyAmountDidReturn(amount: String) {
+    print("CALLED")
+    viewModel.input.inputCurrencyAmount(amount)
+  }
+}
+
+
+// MARK: - Table Data Source
 extension RateViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return viewModel.output.numberOfItems
