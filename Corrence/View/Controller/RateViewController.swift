@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol RateViewControllerDelegate: AnyObject {
+  func showSymbolPicker()
+}
+
 class RateViewController: UIViewController, FromNIB {
   // MARK: - Outlet
   @IBOutlet weak var tableView: UITableView!
@@ -15,6 +19,8 @@ class RateViewController: UIViewController, FromNIB {
     view.delegate = self
     return view
   }()
+
+  weak var delegate: RateViewControllerDelegate?
 
   // MARK: - Initializer
   private var viewModel: RateViewModelType
@@ -81,6 +87,10 @@ class RateViewController: UIViewController, FromNIB {
 extension RateViewController: RateViewHeaderDelegate {
   func currencyAmountDidReturn(amount: String) {
     viewModel.input.inputCurrencyAmount(amount)
+  }
+
+  func symbolDidTap() {
+    delegate?.showSymbolPicker()
   }
 }
 

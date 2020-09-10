@@ -65,6 +65,9 @@
 		2EF8EF902509F74A005BF6E7 /* SymbolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF8EF8F2509F74A005BF6E7 /* SymbolsTests.swift */; };
 		2EF8EF922509F8AC005BF6E7 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF8EF912509F8AC005BF6E7 /* Symbols.swift */; };
 		2EF8EF932509F8AC005BF6E7 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF8EF912509F8AC005BF6E7 /* Symbols.swift */; };
+		2EFD0947250A24830003C594 /* SymbolPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFD0945250A24830003C594 /* SymbolPickerViewController.swift */; };
+		2EFD0948250A24830003C594 /* SymbolPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFD0946250A24830003C594 /* SymbolPickerViewController.xib */; };
+		2EFD094A250A24DF0003C594 /* SymbolPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFD0949250A24DF0003C594 /* SymbolPickerCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +128,9 @@
 		2EF8EF8D2509F72B005BF6E7 /* symbols.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = symbols.json; sourceTree = "<group>"; };
 		2EF8EF8F2509F74A005BF6E7 /* SymbolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsTests.swift; sourceTree = "<group>"; };
 		2EF8EF912509F8AC005BF6E7 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
+		2EFD0945250A24830003C594 /* SymbolPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolPickerViewController.swift; sourceTree = "<group>"; };
+		2EFD0946250A24830003C594 /* SymbolPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymbolPickerViewController.xib; sourceTree = "<group>"; };
+		2EFD0949250A24DF0003C594 /* SymbolPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolPickerCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +165,8 @@
 			children = (
 				2E6389362507603E000C24F8 /* RateViewController.swift */,
 				2E6389372507603E000C24F8 /* RateViewController.xib */,
+				2EFD0945250A24830003C594 /* SymbolPickerViewController.swift */,
+				2EFD0946250A24830003C594 /* SymbolPickerViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -169,6 +177,7 @@
 				2E63893F250784CB000C24F8 /* Protocol */,
 				2E6389422507874C000C24F8 /* AppCoordinator.swift */,
 				2E63894625078E2E000C24F8 /* RateCoordinator.swift */,
+				2EFD0949250A24DF0003C594 /* SymbolPickerCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -333,8 +342,8 @@
 				2E63894C2507913F000C24F8 /* Protocol */,
 				2E63893525075F6E000C24F8 /* Controller */,
 				2E81EF4D25089F8A002C545C /* RateViewCell.swift */,
-				2E630E6E25099BFE00616D05 /* RateViewHeader.swift */,
 				2E81EF4E25089F8A002C545C /* RateViewCell.xib */,
+				2E630E6E25099BFE00616D05 /* RateViewHeader.swift */,
 				2E630E7025099CE000616D05 /* RateViewHeader.xib */,
 			);
 			path = View;
@@ -438,6 +447,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EFD0948250A24830003C594 /* SymbolPickerViewController.xib in Resources */,
 				2E81EF5025089F8A002C545C /* RateViewCell.xib in Resources */,
 				2EDEFD5A25044D5500D7EB46 /* LaunchScreen.storyboard in Resources */,
 				2EDEFD5725044D5500D7EB46 /* Assets.xcassets in Resources */,
@@ -466,6 +476,7 @@
 				2EDE4D6B2504C2EF003376BA /* Requestable.swift in Sources */,
 				2E3591E0250A116700DB80EF /* Cacheable.swift in Sources */,
 				2EF8EF842509E0B3005BF6E7 /* Debouncer.swift in Sources */,
+				2EFD0947250A24830003C594 /* SymbolPickerViewController.swift in Sources */,
 				2EF8EF922509F8AC005BF6E7 /* Symbols.swift in Sources */,
 				2E638941250784D2000C24F8 /* Coordinator.swift in Sources */,
 				2E630E6F25099BFE00616D05 /* RateViewHeader.swift in Sources */,
@@ -473,6 +484,7 @@
 				2E81EF4F25089F8A002C545C /* RateViewCell.swift in Sources */,
 				2E2BD0172508812E0002BD08 /* RateViewCellModel.swift in Sources */,
 				2EDE4D602504B6C1003376BA /* Endpoint.swift in Sources */,
+				2EFD094A250A24DF0003C594 /* SymbolPickerCoordinator.swift in Sources */,
 				2E63894725078E2E000C24F8 /* RateCoordinator.swift in Sources */,
 				2E3591D8250A050100DB80EF /* SymbolsRepository.swift in Sources */,
 				2EDE4D6D2504C4BC003376BA /* JSONRequest.swift in Sources */,
