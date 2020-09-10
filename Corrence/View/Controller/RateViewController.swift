@@ -88,7 +88,7 @@ extension RateViewController: UISearchResultsUpdating {
   func updateSearchResults(for searchController: UISearchController) {
     guard let searchText = searchController.searchBar.text?.lowercased() else { return }
 
-    print(searchText)
+    viewModel.input.searchCurrency(searchText)
   }
 }
 

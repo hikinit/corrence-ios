@@ -53,6 +53,25 @@ class RateViewModelTests: XCTestCase {
     wait(for: [expectation], timeout: 1.0)
   }
 
+  func testSearchCurrency() {
+    let expectation = XCTestExpectation()
+    let indexPath = IndexPath(row: 0, section: 0)
+
+    sut.output.reloadData = { [self] in
+      sut.input.selectItemAtIndexPath(indexPath)
+      let jpy = sut.output.selectedItemModel
+
+      XCTAssertEqual(sut.output.numberOfItems, 1)
+      XCTAssertEqual(jpy.output.currencyIsoCode, "JPY")
+
+      expectation.fulfill()
+    }
+
+    sut.input.searchCurrency("jpy")
+
+    wait(for: [expectation], timeout: 1.0)
+  }
+
   func testCurrencyRateCellModel() {
     sut.input.viewDidLoad()
 

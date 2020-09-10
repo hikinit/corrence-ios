@@ -10,6 +10,7 @@ import Foundation
 // MARK: - IO Protocol
 protocol RateViewModelInput {
   func inputCurrencyAmount(_ amount: String)
+  func searchCurrency(_ search: String)
   func selectBase(_ base: String)
   func selectItemAtIndexPath(_ indexPath: IndexPath)
   func viewDidLoad()
@@ -44,6 +45,12 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
     fetchRate()
   }
 
+  private var searchText: String = ""
+  func searchCurrency(_ search: String) {
+    searchText = search
+    fetchRate()
+  }
+
   func selectBase(_ base: String) {
     output.currencyBase = base
     fetchRate()
@@ -62,8 +69,9 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
   var currencyBase: String = "USD"
   var currencyRates: [CurrencyRate] = []
   var numberOfItems: Int {
-    currencyRates.count
+    filteredCurrencyRates.count
   }
+
   var onError: ((Error) -> Void) = {_ in}
   var reloadData: (() -> Void) = {}
   var selectedItemModel: RateViewCellModelType {
@@ -89,10 +97,18 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
   }
 
   private func transformedRate() -> CurrencyRate {
-    var rate = currencyRates[selectedIndexPath.row]
+    var rate = filteredCurrencyRates[selectedIndexPath.row]
     rate.value *= currencyAmount
-    
+
     return rate
+  }
+
+  var filteredCurrencyRates: [CurrencyRate] {
+    guard searchText.count > 0 else { return currencyRates }
+
+    return currencyRates.filter {
+      $0.iso.lowercased().contains(searchText)
+    }
   }
 
   // MARK: - IO Declaration
