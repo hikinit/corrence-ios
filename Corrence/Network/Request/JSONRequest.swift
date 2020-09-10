@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct RateRequest: Requestable, JSONRequestable {
-  typealias ResponseType = Currency
+struct JSONRequest<T>: Requestable, JSONRequestable where T: Decodable {
+  typealias ResponseType = T
   var url: URL
 
   init(endpoint: Endpoint) {

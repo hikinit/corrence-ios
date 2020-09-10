@@ -7,13 +7,13 @@
 
 import XCTest
 
-class RateRequestTests: XCTestCase {
-  var sut: RateRequest!
+class JSONRequestTests: XCTestCase {
+  var sut: JSONRequest<Currency>!
 
   override func setUp() {
     super.setUp()
     let endpoint = APIEndpoint.latest(base: "USD")
-    sut = RateRequest(endpoint: endpoint)
+    sut = JSONRequest(endpoint: endpoint)
   }
 
   override func tearDown() {

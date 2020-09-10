@@ -36,10 +36,10 @@
 		2EDE4D682504BEA1003376BA /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D672504BEA1003376BA /* APIEndpoint.swift */; };
 		2EDE4D692504BF17003376BA /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D672504BEA1003376BA /* APIEndpoint.swift */; };
 		2EDE4D6B2504C2EF003376BA /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D6A2504C2EF003376BA /* Requestable.swift */; };
-		2EDE4D6D2504C4BC003376BA /* RateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D6C2504C4BC003376BA /* RateRequest.swift */; };
-		2EDE4D6F2504C878003376BA /* RateRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D6E2504C878003376BA /* RateRequestTests.swift */; };
+		2EDE4D6D2504C4BC003376BA /* JSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D6C2504C4BC003376BA /* JSONRequest.swift */; };
+		2EDE4D6F2504C878003376BA /* JSONRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D6E2504C878003376BA /* JSONRequestTests.swift */; };
 		2EDE4D702504C87C003376BA /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D6A2504C2EF003376BA /* Requestable.swift */; };
-		2EDE4D722504CA90003376BA /* RateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D6C2504C4BC003376BA /* RateRequest.swift */; };
+		2EDE4D722504CA90003376BA /* JSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDE4D6C2504C4BC003376BA /* JSONRequest.swift */; };
 		2EDEFD4E25044D5400D7EB46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD4D25044D5400D7EB46 /* AppDelegate.swift */; };
 		2EDEFD5025044D5400D7EB46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD4F25044D5400D7EB46 /* SceneDelegate.swift */; };
 		2EDEFD5725044D5500D7EB46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EDEFD5625044D5500D7EB46 /* Assets.xcassets */; };
@@ -92,8 +92,8 @@
 		2EDE4D622504B9CB003376BA /* APIEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpointTests.swift; sourceTree = "<group>"; };
 		2EDE4D672504BEA1003376BA /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		2EDE4D6A2504C2EF003376BA /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
-		2EDE4D6C2504C4BC003376BA /* RateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateRequest.swift; sourceTree = "<group>"; };
-		2EDE4D6E2504C878003376BA /* RateRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateRequestTests.swift; sourceTree = "<group>"; };
+		2EDE4D6C2504C4BC003376BA /* JSONRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRequest.swift; sourceTree = "<group>"; };
+		2EDE4D6E2504C878003376BA /* JSONRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRequestTests.swift; sourceTree = "<group>"; };
 		2EDEFD4A25044D5400D7EB46 /* Corrence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Corrence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EDEFD4D25044D5400D7EB46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EDEFD4F25044D5400D7EB46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 		2E659A692505E9E700E5A746 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				2EDE4D6C2504C4BC003376BA /* RateRequest.swift */,
+				2EDE4D6C2504C4BC003376BA /* JSONRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -212,9 +212,9 @@
 		2EDE4D5C2504B330003376BA /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				2EDE4D662504BE50003376BA /* Protocol */,
 				2E659A692505E9E700E5A746 /* Request */,
 				2E659A682505E99300E5A746 /* Repository */,
-				2EDE4D662504BE50003376BA /* Protocol */,
 				2EDE4D672504BEA1003376BA /* APIEndpoint.swift */,
 			);
 			path = Network;
@@ -224,7 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				2EDE4D622504B9CB003376BA /* APIEndpointTests.swift */,
-				2EDE4D6E2504C878003376BA /* RateRequestTests.swift */,
+				2EDE4D6E2504C878003376BA /* JSONRequestTests.swift */,
 				2E659A622505DDA700E5A746 /* RateRepositoryTests.swift */,
 			);
 			path = Network;
@@ -454,7 +454,7 @@
 				2E2BD0172508812E0002BD08 /* RateViewCellModel.swift in Sources */,
 				2EDE4D602504B6C1003376BA /* Endpoint.swift in Sources */,
 				2E63894725078E2E000C24F8 /* RateCoordinator.swift in Sources */,
-				2EDE4D6D2504C4BC003376BA /* RateRequest.swift in Sources */,
+				2EDE4D6D2504C4BC003376BA /* JSONRequest.swift in Sources */,
 				2E6389432507874C000C24F8 /* AppCoordinator.swift in Sources */,
 				2E6389382507603E000C24F8 /* RateViewController.swift in Sources */,
 				2EDEFD8E2504694200D7EB46 /* Currency.swift in Sources */,
@@ -476,7 +476,7 @@
 				2EDE4D692504BF17003376BA /* APIEndpoint.swift in Sources */,
 				2E659A6F2506137600E5A746 /* RateViewModelTests.swift in Sources */,
 				2EF8EF902509F74A005BF6E7 /* SymbolsTests.swift in Sources */,
-				2EDE4D6F2504C878003376BA /* RateRequestTests.swift in Sources */,
+				2EDE4D6F2504C878003376BA /* JSONRequestTests.swift in Sources */,
 				2EF8EF932509F8AC005BF6E7 /* Symbols.swift in Sources */,
 				2E2BD0182508812E0002BD08 /* RateViewCellModel.swift in Sources */,
 				2EDEFD9325046C5200D7EB46 /* Currency.swift in Sources */,
@@ -487,7 +487,7 @@
 				2E63893225075A82000C24F8 /* MockRateRepository.swift in Sources */,
 				2EDE4D632504B9CB003376BA /* APIEndpointTests.swift in Sources */,
 				2E659A74250613A000E5A746 /* RateViewModel.swift in Sources */,
-				2EDE4D722504CA90003376BA /* RateRequest.swift in Sources */,
+				2EDE4D722504CA90003376BA /* JSONRequest.swift in Sources */,
 				2EDE4D652504BA0C003376BA /* Endpoint.swift in Sources */,
 				2EDEFD8925045E9C00D7EB46 /* ObservableTests.swift in Sources */,
 				2E659A6C2505EA8400E5A746 /* JSONRequestable.swift in Sources */,
