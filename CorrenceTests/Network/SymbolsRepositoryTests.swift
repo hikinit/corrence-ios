@@ -40,4 +40,10 @@ class SymbolsRepositoryTests: XCTestCase {
     wait(for: [expectation], timeout: 2.0)
   }
 
+  func testGetSymbolFromCache() {
+    let aud = sut.getSymbolFromCache(code: "AUD")
+
+    XCTAssertEqual(aud?.code, "AUD")
+    XCTAssertEqual(aud?.description, "Australian Dollar")
+  }
 }

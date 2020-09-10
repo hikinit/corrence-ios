@@ -27,6 +27,15 @@ struct SymbolsRepository: SymbolRepositoryType {
     }
   }
 
+  func getSymbolFromCache(code: String) -> Symbol? {
+    guard let symbols = cacheRepository.cachedData,
+          let symbol = symbols.list[code] else {
+      return nil
+    }
+
+    return symbol
+  }
+
   private func loadExternaly(completion: @escaping CompletionHandler) {
     externalRepository.fetch { result in
       switch result {
