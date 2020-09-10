@@ -51,6 +51,7 @@
 		2EDEFD90250469D600D7EB46 /* CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD8F250469D600D7EB46 /* CurrencyTests.swift */; };
 		2EDEFD9225046A3400D7EB46 /* rates.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EDEFD9125046A3400D7EB46 /* rates.json */; };
 		2EDEFD9325046C5200D7EB46 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDEFD8D2504694200D7EB46 /* Currency.swift */; };
+		2EF8EF842509E0B3005BF6E7 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF8EF832509E0B3005BF6E7 /* Debouncer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		2EDEFD8D2504694200D7EB46 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		2EDEFD8F250469D600D7EB46 /* CurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTests.swift; sourceTree = "<group>"; };
 		2EDEFD9125046A3400D7EB46 /* rates.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rates.json; sourceTree = "<group>"; };
+		2EF8EF832509E0B3005BF6E7 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 				2E659A712506139000E5A746 /* ViewModel */,
 				2EDEFD952504765100D7EB46 /* View */,
 				2EDE4D5C2504B330003376BA /* Network */,
+				2EF8EF822509E0A6005BF6E7 /* Utility */,
 				2EDEFD8C250467E600D7EB46 /* Support */,
 			);
 			path = Corrence;
@@ -316,6 +319,14 @@
 				2EDEFD8F250469D600D7EB46 /* CurrencyTests.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2EF8EF822509E0A6005BF6E7 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				2EF8EF832509E0B3005BF6E7 /* Debouncer.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,6 +434,7 @@
 			files = (
 				2EDE4D682504BEA1003376BA /* APIEndpoint.swift in Sources */,
 				2EDE4D6B2504C2EF003376BA /* Requestable.swift in Sources */,
+				2EF8EF842509E0B3005BF6E7 /* Debouncer.swift in Sources */,
 				2E638941250784D2000C24F8 /* Coordinator.swift in Sources */,
 				2E630E6F25099BFE00616D05 /* RateViewHeader.swift in Sources */,
 				2E659A6B2505EA8400E5A746 /* JSONRequestable.swift in Sources */,

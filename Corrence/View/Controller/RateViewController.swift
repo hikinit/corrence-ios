@@ -47,12 +47,13 @@ class RateViewController: UIViewController, FromNIB {
 
     viewModel.output.reloadData = { [weak self] in
       DispatchQueue.main.async {
-        self?.tableView.reloadData()
+        self?.tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
       }
     }
   }
 
   // MARK: - Search Bar
+  private var searchDebouncer: Debouncer?
   private func setupSearchBar() {
     let search = UISearchController(searchResultsController: nil)
 
@@ -88,7 +89,20 @@ extension RateViewController: UISearchResultsUpdating {
   func updateSearchResults(for searchController: UISearchController) {
     guard let searchText = searchController.searchBar.text?.lowercased() else { return }
 
-    viewModel.input.searchCurrency(searchText)
+    guard let searchDebouncer = self.searchDebouncer else {
+      let debouncer = Debouncer(delay: 0.4, handler: {})
+      self.searchDebouncer = debouncer
+
+      return
+    }
+
+    searchDebouncer.invalidate()
+
+    searchDebouncer.handler = { [weak self] in
+      self?.viewModel.input.searchCurrency(searchText)
+    }
+
+    searchDebouncer.call()
   }
 }
 
