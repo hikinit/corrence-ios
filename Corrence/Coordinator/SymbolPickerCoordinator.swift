@@ -18,6 +18,8 @@ class SymbolPickerCoordinator: NavigationCoordinator {
 
   func start() {
     let controller = SymbolPickerViewController()
-    navigationController.present(controller, animated: true, completion: onCompleted)
+    let navCon = UINavigationController(rootViewController: controller)
+
+    navigationController.present(navCon, animated: true, completion: onCompleted)
   }
 }
