@@ -17,8 +17,6 @@ struct RateRepository: RateRepositoryType {
     let endpoint = APIEndpoint.latest(base: base)
     let request = JSONRequest<Currency>(endpoint: endpoint)
 
-    request.load { result in
-      completion(result)
-    }
+    request.load(completion: completion)
   }
 }
