@@ -8,7 +8,7 @@
 import XCTest
 
 class RateViewModelTests: XCTestCase {
-  var sut: RateViewModel!
+  var sut: RateViewModelType!
 
   override func setUp() {
     super.setUp()
@@ -25,9 +25,8 @@ class RateViewModelTests: XCTestCase {
     var base = "USD"
 
     sut.output.reloadData = { [self] in
-      XCTAssertEqual(sut.title.value, "\(base) Latest Rates")
-      XCTAssertEqual(sut.currencyBase, base)
-      XCTAssertEqual(sut.numberOfItems, 6)
+      XCTAssertEqual(sut.output.title.value, "\(base) Latest Rates")
+      XCTAssertEqual(sut.output.numberOfItems, 6)
 
       expectation.fulfill()
     }
@@ -60,19 +59,20 @@ class RateViewModelTests: XCTestCase {
     var indexPath = IndexPath(row: 0, section: 0)
     sut.input.selectItemAtIndexPath(indexPath)
 
-    var sut = self.sut.output.selectedItemModel
+    let btc = self.sut.output.selectedItemModel
 
-    XCTAssertEqual(sut.output.currencyIsoCode, "BTC")
-    XCTAssertEqual(sut.output.currencyValue, "0.000099")
-    XCTAssertEqual(sut.output.currencySymbol, "BTC")
+    XCTAssertEqual(btc.output.currencyIsoCode, "BTC")
+    XCTAssertEqual(btc.output.currencyValue, "0.000099")
+    XCTAssertEqual(btc.output.currencySymbol, "BTC")
 
     indexPath = IndexPath(row: 3, section: 0)
-    self.sut.input.selectItemAtIndexPath(indexPath)
-    sut = self.sut.output.selectedItemModel
+    sut.input.selectItemAtIndexPath(indexPath)
+    sut.input.inputCurrencyAmount("10")
+    let idr = self.sut.output.selectedItemModel
 
-    XCTAssertEqual(sut.output.currencyIsoCode, "IDR")
-    XCTAssertEqual(sut.output.currencyValue, "14,838.59")
-    XCTAssertEqual(sut.output.currencySymbol, "IDR")
+    XCTAssertEqual(idr.output.currencyIsoCode, "IDR")
+    XCTAssertEqual(idr.output.currencyValue, "148,385.92")
+    XCTAssertEqual(idr.output.currencySymbol, "IDR")
   }
 }
 

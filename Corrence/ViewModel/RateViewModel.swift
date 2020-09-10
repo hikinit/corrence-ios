@@ -9,7 +9,8 @@ import Foundation
 
 // MARK: - IO Protocol
 protocol RateViewModelInput {
-  func selectBase(_ string: String)
+  func inputCurrencyAmount(_ amount: String)
+  func selectBase(_ base: String)
   func selectItemAtIndexPath(_ indexPath: IndexPath)
   func viewDidLoad()
 }
@@ -37,8 +38,15 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
   }
 
   // MARK: - Input
+  private var currencyAmount: Double = 1
+  func inputCurrencyAmount(_ amount: String) {
+    currencyAmount = Double(amount) ?? 1
+    fetchRate()
+  }
+
   func selectBase(_ base: String) {
-    fetchRate(base)
+    output.currencyBase = base
+    fetchRate()
   }
 
   private var selectedIndexPath = IndexPath()
@@ -47,7 +55,7 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
   }
 
   func viewDidLoad() {
-    fetchRate(currencyBase)
+    fetchRate()
   }
 
   // MARK: - Output
@@ -59,8 +67,7 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
   var onError: ((Error) -> Void) = {_ in}
   var reloadData: (() -> Void) = {}
   var selectedItemModel: RateViewCellModelType {
-    let rate = currencyRates[selectedIndexPath.row]
-    return RateViewCellModel(rate: rate)
+    RateViewCellModel(rate: transformedRate())
   }
 
   var title: Observable<String> {
@@ -68,8 +75,8 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
   }
 
   // MARK: - Helper
-  private func fetchRate(_ base: String) {
-    output.currencyBase = base
+  private func fetchRate() {
+    let base = output.currencyBase
     repository.fetch(base: base) { [weak self] in
       switch $0 {
       case .success(let currency):
@@ -79,6 +86,13 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
         self?.output.onError(error)
       }
     }
+  }
+
+  private func transformedRate() -> CurrencyRate {
+    var rate = currencyRates[selectedIndexPath.row]
+    rate.value *= currencyAmount
+    
+    return rate
   }
 
   // MARK: - IO Declaration
