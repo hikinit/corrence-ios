@@ -7,14 +7,14 @@
 
 import Foundation
 
-class FailureMockRateRepository: RateRepository {
+struct FailureMockRateRepository: RateRepositoryType {
   var error: Error
 
   init(error: Error) {
     self.error = error
   }
 
-  override func fetch(base: String, completion: @escaping (Result<Currency, Error>) -> Void) {
+  func fetch(base: String, completion: @escaping (Result<Currency, Error>) -> Void) {
     completion(.failure(RequestableError.clientError))
   }
 }

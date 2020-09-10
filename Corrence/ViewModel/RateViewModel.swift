@@ -33,8 +33,8 @@ protocol RateViewModelType {
 
 // MARK: - VM
 class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput {
-  private let repository: RateRepository
-  init(repository: RateRepository) {
+  private let repository: RateRepositoryType
+  init(repository: RateRepositoryType) {
     self.repository = repository
   }
 

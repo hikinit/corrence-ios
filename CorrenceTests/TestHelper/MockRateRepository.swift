@@ -7,8 +7,8 @@
 
 import Foundation
 
-class MockRateRepository: RateRepository {
-  override func fetch(base: String, completion: @escaping (Result<Currency, Error>) -> Void) {
+struct MockRateRepository: RateRepositoryType {
+  func fetch(base: String, completion: @escaping (Result<Currency, Error>) -> Void) {
     var currency = Currency(base: base, rates: [])
     currency.rates.append(CurrencyRate(iso: "BTC", value: 0.000099))
     currency.rates.append(CurrencyRate(iso: "EUR", value: 0.849407))

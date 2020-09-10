@@ -7,8 +7,13 @@
 
 import Foundation
 
-class RateRepository {
-  func fetch(base: String, completion: @escaping (Result<Currency, Error>) -> Void) {
+protocol RateRepositoryType {
+  typealias CompletionHandler = (Result<Currency, Error>) -> Void
+  func fetch(base: String, completion: @escaping CompletionHandler)
+}
+
+struct RateRepository: RateRepositoryType {
+  func fetch(base: String, completion: @escaping CompletionHandler) {
     let endpoint = APIEndpoint.latest(base: base)
     let request = JSONRequest<Currency>(endpoint: endpoint)
 
