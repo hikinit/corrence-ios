@@ -11,12 +11,14 @@ class RateViewHeader: UIView, FromNIB {
   @IBOutlet var view: UIView!
   @IBOutlet weak var containerView: UIView!
   @IBOutlet weak var flagImageView: UIImageView!
+  @IBOutlet weak var currencyAmountTextField: UITextField!
 
   override init(frame: CGRect) {
     super.init(frame: frame)
 
     setupNib()
     setupView()
+    setupTextField()
     setupConstraint()
   }
 
@@ -35,9 +37,28 @@ class RateViewHeader: UIView, FromNIB {
 
   private func setupView() {
     addSubview(view)
-
+    
     containerView.layer.cornerRadius = 8
     flagImageView.layer.cornerRadius = 4
+  }
+
+  private func setupTextField() {
+    let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 35))
+    toolbar.setItems([
+      UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(textFieldDidCancel)),
+      UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+      UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(textFieldDidDone))
+    ], animated: true)
+
+    currencyAmountTextField.inputAccessoryView = toolbar
+  }
+
+  @objc private func textFieldDidDone() {
+    currencyAmountTextField.resignFirstResponder()
+  }
+
+  @objc private func textFieldDidCancel() {
+    currencyAmountTextField.resignFirstResponder()
   }
 
   private func setupConstraint(){

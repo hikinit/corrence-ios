@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RateViewHeader" customModule="Corrence" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="bOT-Mg-r4I" id="0S9-83-TI0"/>
+                <outlet property="currencyAmountTextField" destination="xpi-Yy-z0E" id="zCf-10-b99"/>
                 <outlet property="flagImageView" destination="KBl-1T-Eij" id="JUn-mD-RDW"/>
                 <outlet property="view" destination="lYI-3D-psc" id="yZg-iR-b28"/>
             </connections>
@@ -41,8 +42,8 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1.00" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xpi-Yy-z0E">
-                                    <rect key="frame" x="98.5" y="20.5" width="251.5" height="22"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <rect key="frame" x="98.5" y="14" width="251.5" height="35"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                                 </textField>
                             </subviews>
