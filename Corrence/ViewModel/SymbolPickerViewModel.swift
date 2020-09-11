@@ -52,13 +52,13 @@ class SymbolPickerViewModel: SymbolPickerViewModelType, SymbolPickerViewModelInp
 
   // MARK: - Output
   var numberOfItems: Int {
-    symbols.count
+    symbolsFiltered.count
   }
 
   var onError: ((Error) -> Void) = {_ in}
   var reloadData: (() -> Void) = {}
   var selectedItemModel: SymbolViewModelType {
-    SymbolViewModel(symbol: symbols[selectedIndexPath.row])
+    SymbolViewModel(symbol: symbolsFiltered[selectedIndexPath.row])
   }
 
   var title: String {
@@ -75,6 +75,26 @@ class SymbolPickerViewModel: SymbolPickerViewModelType, SymbolPickerViewModelInp
         self?.output.reloadData()
       case .failure(let error):
         self?.output.onError(error)
+      }
+    }
+  }
+
+  // MARK: Filter
+  private var symbolsFiltered: [Symbol] {
+    filter.filter(data: symbols)
+  }
+
+  private var filter: Filter<Symbol>  {
+    Filter(filters: [filterSearch])
+  }
+
+  private var filterSearch: Filter<Symbol>.Handler {
+    return {[unowned self]  in
+      guard searchText.count > 0 else { return $0 }
+
+      return $0.filter {
+        $0.code.lowercased().contains(self.searchText) ||
+        $0.description.lowercased().contains(self.searchText)
       }
     }
   }

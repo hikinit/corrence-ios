@@ -17,7 +17,12 @@ class SymbolPickerCoordinator: NavigationCoordinator {
   }
 
   func start() {
-    let controller = SymbolPickerViewController()
+    let repository = SymbolsRepository(
+      cacheRepository: CacheSymbolsRepository(),
+      externalRepository: ExternalSymbolsRepository())
+    let viewModel = SymbolPickerViewModel(repository: repository)
+
+    let controller = SymbolPickerViewController(viewModel: viewModel)
     let navCon = UINavigationController(rootViewController: controller)
 
     navigationController.present(navCon, animated: true, completion: onCompleted)
