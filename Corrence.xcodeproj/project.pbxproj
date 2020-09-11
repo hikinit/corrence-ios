@@ -29,7 +29,6 @@
 		2E630E6F25099BFE00616D05 /* RateViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E630E6E25099BFE00616D05 /* RateViewHeader.swift */; };
 		2E630E7125099CE000616D05 /* RateViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E630E7025099CE000616D05 /* RateViewHeader.xib */; };
 		2E63893225075A82000C24F8 /* MockRateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63893125075A82000C24F8 /* MockRateRepository.swift */; };
-		2E63893425075A96000C24F8 /* FailureMockRateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63893325075A96000C24F8 /* FailureMockRateRepository.swift */; };
 		2E6389382507603E000C24F8 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6389362507603E000C24F8 /* RateViewController.swift */; };
 		2E6389392507603E000C24F8 /* RateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6389372507603E000C24F8 /* RateViewController.xib */; };
 		2E638941250784D2000C24F8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E638940250784D2000C24F8 /* Coordinator.swift */; };
@@ -106,7 +105,6 @@
 		2E630E6E25099BFE00616D05 /* RateViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateViewHeader.swift; sourceTree = "<group>"; };
 		2E630E7025099CE000616D05 /* RateViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateViewHeader.xib; sourceTree = "<group>"; };
 		2E63893125075A82000C24F8 /* MockRateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRateRepository.swift; sourceTree = "<group>"; };
-		2E63893325075A96000C24F8 /* FailureMockRateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureMockRateRepository.swift; sourceTree = "<group>"; };
 		2E6389362507603E000C24F8 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 		2E6389372507603E000C24F8 /* RateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateViewController.xib; sourceTree = "<group>"; };
 		2E638940250784D2000C24F8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				2E63893125075A82000C24F8 /* MockRateRepository.swift */,
-				2E63893325075A96000C24F8 /* FailureMockRateRepository.swift */,
 				2E51D749250BADDF00BB4D4D /* MockSymbolRepository.swift */,
 			);
 			path = TestHelper;
@@ -577,7 +574,6 @@
 				2EDEFD8925045E9C00D7EB46 /* ObservableTests.swift in Sources */,
 				2E659A6C2505EA8400E5A746 /* JSONRequestable.swift in Sources */,
 				2E51D74A250BADDF00BB4D4D /* MockSymbolRepository.swift in Sources */,
-				2E63893425075A96000C24F8 /* FailureMockRateRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

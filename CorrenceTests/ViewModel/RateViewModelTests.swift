@@ -40,7 +40,7 @@ class RateViewModelTests: XCTestCase {
 
   func testFetchCurrencyFail() {
     let expectation = XCTestExpectation()
-    let customError = RequestableError.clientError
+    let customError = RequestableError.invalidResponse
     sut = RateViewModel(repository: FailureMockRateRepository(error:customError))
 
     sut.output.onError = { error in

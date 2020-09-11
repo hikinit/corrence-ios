@@ -21,3 +21,14 @@ struct MockRateRepository: RateRepositoryType {
   }
 }
 
+struct FailureMockRateRepository: RateRepositoryType {
+  var error: Error
+
+  init(error: Error) {
+    self.error = error
+  }
+
+  func fetch(base: String, completion: @escaping (Result<Currency, Error>) -> Void) {
+    completion(.failure(error))
+  }
+}
