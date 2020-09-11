@@ -12,9 +12,8 @@ protocol RateViewHeaderDelegate: RateViewController {
   func symbolDidTap()
 }
 
-class RateViewHeader: UIView, FromNIB {
+class RateViewHeader: NibView {
   // MARK: - Outlet
-  @IBOutlet var view: UIView!
   @IBOutlet weak var containerView: UIView!
   @IBOutlet weak var flagImageView: UIImageView!
   @IBOutlet weak var currencyAmountTextField: UITextField!
@@ -25,32 +24,21 @@ class RateViewHeader: UIView, FromNIB {
   override init(frame: CGRect) {
     super.init(frame: frame)
 
-    setupNib()
     setupView()
     setupTextField()
     setupGestureRecognizer()
-    setupConstraint()
   }
 
   required init?(coder: NSCoder) {
     super.init(coder: coder)
 
-    setupNib()
     setupView()
-    setupConstraint()
-    setupGestureRecognizer()
+    setupTextField()
     setupGestureRecognizer()
   }
 
-  // MARK: - Setup View
-  private func setupNib() {
-    let nib = UINib(nibName: Self.nibName, bundle: Self.nibBundle)
-    nib.instantiate(withOwner: self, options: nil)
-  }
-
+  // MARK: - View
   private func setupView() {
-    addSubview(view)
-    
     containerView.layer.cornerRadius = 8
     flagImageView.layer.cornerRadius = 4
   }
@@ -87,15 +75,5 @@ class RateViewHeader: UIView, FromNIB {
 
   @objc private func symbolDidTap() {
     delegate?.symbolDidTap()
-  }
-
-  // MARK: - Constraint
-  private func setupConstraint(){
-    NSLayoutConstraint.activate([
-      view.topAnchor.constraint(equalTo: topAnchor),
-      view.bottomAnchor.constraint(equalTo: bottomAnchor),
-      view.leadingAnchor.constraint(equalTo: leadingAnchor),
-      view.trailingAnchor.constraint(equalTo: trailingAnchor),
-    ])
   }
 }

@@ -14,7 +14,6 @@
                 <outlet property="symbolCodeLabel" destination="InF-bI-Bt5" id="FJt-6p-Da3"/>
                 <outlet property="symbolDescription" destination="v5j-Sz-PLR" id="mxH-JL-PEV"/>
                 <outlet property="symbolFlag" destination="3j0-s1-O74" id="qK7-mW-azH"/>
-                <outlet property="view" destination="5zX-VA-e89" id="MWL-W6-pnR"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

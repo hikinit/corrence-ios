@@ -15,7 +15,6 @@
                 <outlet property="containerView" destination="bOT-Mg-r4I" id="0S9-83-TI0"/>
                 <outlet property="currencyAmountTextField" destination="xpi-Yy-z0E" id="zCf-10-b99"/>
                 <outlet property="flagImageView" destination="KBl-1T-Eij" id="JUn-mD-RDW"/>
-                <outlet property="view" destination="lYI-3D-psc" id="yZg-iR-b28"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
