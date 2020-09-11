@@ -107,11 +107,11 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
     filter.filter(data: currencyRates)
   }
 
-  private var filter: CurrencyRateFilter  {
-    CurrencyRateFilter(filters: [filterSearch])
+  private var filter: Filter<CurrencyRate>  {
+    Filter(filters: [filterSearch])
   }
 
-  private var filterSearch: CurrencyRateFilter.Filter {
+  private var filterSearch: Filter<CurrencyRate>.Handler {
     return {[unowned self]  in
       guard searchText.count > 0 else { return $0 }
 

@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct CurrencyRateFilter {
-  typealias Filter = ([CurrencyRate]) -> [CurrencyRate]
+struct Filter<T> {
+  typealias Handler = ([T]) -> [T]
 
-  var filters: [Filter]
+  var filters: [Handler]
 
-  func filter(data: [CurrencyRate]) -> [CurrencyRate] {
+  func filter(data: [T]) -> [T] {
     let array = filters.reduce(data) { result, filter in
       filter(result)
     }

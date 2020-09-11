@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2E12C9ED250BAA2800EED1CB /* SymbolPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E12C9EC250BAA2800EED1CB /* SymbolPickerViewModel.swift */; };
-		2E135A18250B7359003819E3 /* CurrencyRateFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E135A17250B7359003819E3 /* CurrencyRateFilter.swift */; };
-		2E135A19250B7359003819E3 /* CurrencyRateFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E135A17250B7359003819E3 /* CurrencyRateFilter.swift */; };
+		2E135A18250B7359003819E3 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E135A17250B7359003819E3 /* Filter.swift */; };
+		2E135A19250B7359003819E3 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E135A17250B7359003819E3 /* Filter.swift */; };
 		2E2BD0172508812E0002BD08 /* RateViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BD0162508812E0002BD08 /* RateViewCellModel.swift */; };
 		2E2BD0182508812E0002BD08 /* RateViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BD0162508812E0002BD08 /* RateViewCellModel.swift */; };
 		2E3591D8250A050100DB80EF /* SymbolsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3591D7250A050100DB80EF /* SymbolsRepository.swift */; };
@@ -92,7 +92,7 @@
 
 /* Begin PBXFileReference section */
 		2E12C9EC250BAA2800EED1CB /* SymbolPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolPickerViewModel.swift; sourceTree = "<group>"; };
-		2E135A17250B7359003819E3 /* CurrencyRateFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateFilter.swift; sourceTree = "<group>"; };
+		2E135A17250B7359003819E3 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		2E2BD0162508812E0002BD08 /* RateViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewCellModel.swift; sourceTree = "<group>"; };
 		2E3591D7250A050100DB80EF /* SymbolsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsRepository.swift; sourceTree = "<group>"; };
 		2E3591D9250A093800DB80EF /* SymbolsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsRepositoryTests.swift; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 		2E284F76250B85C40033E1EF /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				2E135A17250B7359003819E3 /* CurrencyRateFilter.swift */,
+				2E135A17250B7359003819E3 /* Filter.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -527,7 +527,7 @@
 				2E6389432507874C000C24F8 /* AppCoordinator.swift in Sources */,
 				2E6389382507603E000C24F8 /* RateViewController.swift in Sources */,
 				2EDEFD8E2504694200D7EB46 /* Currency.swift in Sources */,
-				2E135A18250B7359003819E3 /* CurrencyRateFilter.swift in Sources */,
+				2E135A18250B7359003819E3 /* Filter.swift in Sources */,
 				2E12C9ED250BAA2800EED1CB /* SymbolPickerViewModel.swift in Sources */,
 				2E63894B25078F95000C24F8 /* NavigationCoordinator.swift in Sources */,
 				2EDEFD8725045ACB00D7EB46 /* Observable.swift in Sources */,
@@ -563,7 +563,7 @@
 				2E3591E4250A136900DB80EF /* CacheSymbolsRepository.swift in Sources */,
 				2EDEFD8B25045F0D00D7EB46 /* Observable.swift in Sources */,
 				2EDEFD90250469D600D7EB46 /* CurrencyTests.swift in Sources */,
-				2E135A19250B7359003819E3 /* CurrencyRateFilter.swift in Sources */,
+				2E135A19250B7359003819E3 /* Filter.swift in Sources */,
 				2E659A672505DE5A00E5A746 /* RateRepository.swift in Sources */,
 				2E63893225075A82000C24F8 /* MockRateRepository.swift in Sources */,
 				2EDE4D632504B9CB003376BA /* APIEndpointTests.swift in Sources */,
