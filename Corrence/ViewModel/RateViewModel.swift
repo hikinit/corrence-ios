@@ -18,7 +18,6 @@ protocol RateViewModelInput {
 
 protocol RateViewModelOutput: AnyObject {
   var currencyBase: String { get set }
-  var currencyRates: [CurrencyRate] { get set }
   var numberOfItems: Int { get }
   var onError: ((Error) -> Void) { get set }
   var reloadData: (() -> Void) { get set }
@@ -67,9 +66,8 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
 
   // MARK: - Output
   var currencyBase: String = "USD"
-  var currencyRates: [CurrencyRate] = []
   var numberOfItems: Int {
-    filteredCurrencyRates.count
+    currencyRatesFiltered.count
   }
 
   var onError: ((Error) -> Void) = {_ in}
@@ -83,12 +81,13 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
   }
 
   // MARK: - Helper
+  private var currencyRates: [CurrencyRate] = []
   private func fetchRate() {
     let base = output.currencyBase
     repository.fetch(base: base) { [weak self] in
       switch $0 {
       case .success(let currency):
-        self?.output.currencyRates = currency.rates.sorted { $1.iso > $0.iso }
+        self?.currencyRates = currency.rates.sorted { $1.iso > $0.iso }
         self?.output.reloadData()
       case .failure(let error):
         self?.output.onError(error)
@@ -97,17 +96,28 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
   }
 
   private func transformedRate() -> CurrencyRate {
-    var rate = filteredCurrencyRates[selectedIndexPath.row]
+    var rate = currencyRatesFiltered[selectedIndexPath.row]
     rate.value *= currencyAmount
 
     return rate
   }
 
-  var filteredCurrencyRates: [CurrencyRate] {
-    guard searchText.count > 0 else { return currencyRates }
+  // MARK: - Filter
+  private var currencyRatesFiltered: [CurrencyRate] {
+    filter.filter(data: currencyRates)
+  }
 
-    return currencyRates.filter {
-      $0.iso.lowercased().contains(searchText)
+  private var filter: CurrencyRateFilter  {
+    CurrencyRateFilter(filters: [filterSearch])
+  }
+
+  private var filterSearch: CurrencyRateFilter.Filter {
+    return {[unowned self]  in
+      guard searchText.count > 0 else { return $0 }
+
+      return $0.filter {
+        $0.iso.lowercased().contains(self.searchText)
+      }
     }
   }
 

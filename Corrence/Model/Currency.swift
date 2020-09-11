@@ -12,6 +12,8 @@ struct CurrencyRate {
   var value: Double
 }
 
+extension CurrencyRate: Equatable {}
+
 struct Currency {
   var base: String
   var rates: [CurrencyRate]
