@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E12C9ED250BAA2800EED1CB /* SymbolPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E12C9EC250BAA2800EED1CB /* SymbolPickerViewModel.swift */; };
 		2E135A18250B7359003819E3 /* CurrencyRateFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E135A17250B7359003819E3 /* CurrencyRateFilter.swift */; };
 		2E135A19250B7359003819E3 /* CurrencyRateFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E135A17250B7359003819E3 /* CurrencyRateFilter.swift */; };
 		2E2BD0172508812E0002BD08 /* RateViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BD0162508812E0002BD08 /* RateViewCellModel.swift */; };
@@ -20,6 +21,11 @@
 		2E3591E4250A136900DB80EF /* CacheSymbolsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3591E2250A135A00DB80EF /* CacheSymbolsRepository.swift */; };
 		2E3591E6250A1FBA00DB80EF /* ExternalSymbolsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3591E5250A1FBA00DB80EF /* ExternalSymbolsRepository.swift */; };
 		2E3591E7250A1FBA00DB80EF /* ExternalSymbolsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3591E5250A1FBA00DB80EF /* ExternalSymbolsRepository.swift */; };
+		2E46CA6B250BAD3600E6E1EB /* SymbolPickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E46CA6A250BAD3600E6E1EB /* SymbolPickerViewModelTests.swift */; };
+		2E46CA6C250BAD3C00E6E1EB /* SymbolPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E12C9EC250BAA2800EED1CB /* SymbolPickerViewModel.swift */; };
+		2E51D74A250BADDF00BB4D4D /* MockSymbolRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51D749250BADDF00BB4D4D /* MockSymbolRepository.swift */; };
+		2E51D74C250BB05F00BB4D4D /* SymbolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51D74B250BB05F00BB4D4D /* SymbolViewModel.swift */; };
+		2E51D74D250BB48900BB4D4D /* SymbolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51D74B250BB05F00BB4D4D /* SymbolViewModel.swift */; };
 		2E630E6F25099BFE00616D05 /* RateViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E630E6E25099BFE00616D05 /* RateViewHeader.swift */; };
 		2E630E7125099CE000616D05 /* RateViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E630E7025099CE000616D05 /* RateViewHeader.xib */; };
 		2E63893225075A82000C24F8 /* MockRateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63893125075A82000C24F8 /* MockRateRepository.swift */; };
@@ -86,6 +92,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E12C9EC250BAA2800EED1CB /* SymbolPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolPickerViewModel.swift; sourceTree = "<group>"; };
 		2E135A17250B7359003819E3 /* CurrencyRateFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateFilter.swift; sourceTree = "<group>"; };
 		2E2BD0162508812E0002BD08 /* RateViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewCellModel.swift; sourceTree = "<group>"; };
 		2E3591D7250A050100DB80EF /* SymbolsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsRepository.swift; sourceTree = "<group>"; };
@@ -93,6 +100,9 @@
 		2E3591DF250A116700DB80EF /* Cacheable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cacheable.swift; sourceTree = "<group>"; };
 		2E3591E2250A135A00DB80EF /* CacheSymbolsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheSymbolsRepository.swift; sourceTree = "<group>"; };
 		2E3591E5250A1FBA00DB80EF /* ExternalSymbolsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalSymbolsRepository.swift; sourceTree = "<group>"; };
+		2E46CA6A250BAD3600E6E1EB /* SymbolPickerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolPickerViewModelTests.swift; sourceTree = "<group>"; };
+		2E51D749250BADDF00BB4D4D /* MockSymbolRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSymbolRepository.swift; sourceTree = "<group>"; };
+		2E51D74B250BB05F00BB4D4D /* SymbolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolViewModel.swift; sourceTree = "<group>"; };
 		2E630E6E25099BFE00616D05 /* RateViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateViewHeader.swift; sourceTree = "<group>"; };
 		2E630E7025099CE000616D05 /* RateViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateViewHeader.xib; sourceTree = "<group>"; };
 		2E63893125075A82000C24F8 /* MockRateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRateRepository.swift; sourceTree = "<group>"; };
@@ -173,6 +183,7 @@
 			children = (
 				2E63893125075A82000C24F8 /* MockRateRepository.swift */,
 				2E63893325075A96000C24F8 /* FailureMockRateRepository.swift */,
+				2E51D749250BADDF00BB4D4D /* MockSymbolRepository.swift */,
 			);
 			path = TestHelper;
 			sourceTree = "<group>";
@@ -239,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				2E659A6E2506137600E5A746 /* RateViewModelTests.swift */,
+				2E46CA6A250BAD3600E6E1EB /* SymbolPickerViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -249,6 +261,8 @@
 				2E284F76250B85C40033E1EF /* Utility */,
 				2E659A72250613A000E5A746 /* RateViewModel.swift */,
 				2E2BD0162508812E0002BD08 /* RateViewCellModel.swift */,
+				2E12C9EC250BAA2800EED1CB /* SymbolPickerViewModel.swift */,
+				2E51D74B250BB05F00BB4D4D /* SymbolViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -504,6 +518,7 @@
 				2E630E6F25099BFE00616D05 /* RateViewHeader.swift in Sources */,
 				2E659A6B2505EA8400E5A746 /* JSONRequestable.swift in Sources */,
 				2E81EF4F25089F8A002C545C /* RateViewCell.swift in Sources */,
+				2E51D74C250BB05F00BB4D4D /* SymbolViewModel.swift in Sources */,
 				2E2BD0172508812E0002BD08 /* RateViewCellModel.swift in Sources */,
 				2EDE4D602504B6C1003376BA /* Endpoint.swift in Sources */,
 				2EFD094A250A24DF0003C594 /* SymbolPickerCoordinator.swift in Sources */,
@@ -516,6 +531,7 @@
 				2E6389382507603E000C24F8 /* RateViewController.swift in Sources */,
 				2EDEFD8E2504694200D7EB46 /* Currency.swift in Sources */,
 				2E135A18250B7359003819E3 /* CurrencyRateFilter.swift in Sources */,
+				2E12C9ED250BAA2800EED1CB /* SymbolPickerViewModel.swift in Sources */,
 				2E63894B25078F95000C24F8 /* NavigationCoordinator.swift in Sources */,
 				2EDEFD8725045ACB00D7EB46 /* Observable.swift in Sources */,
 				2E659A652505DDB500E5A746 /* RateRepository.swift in Sources */,
@@ -541,6 +557,8 @@
 				2EDE4D6F2504C878003376BA /* JSONRequestTests.swift in Sources */,
 				2EF8EF932509F8AC005BF6E7 /* Symbols.swift in Sources */,
 				2E2BD0182508812E0002BD08 /* RateViewCellModel.swift in Sources */,
+				2E46CA6B250BAD3600E6E1EB /* SymbolPickerViewModelTests.swift in Sources */,
+				2E46CA6C250BAD3C00E6E1EB /* SymbolPickerViewModel.swift in Sources */,
 				2EDEFD9325046C5200D7EB46 /* Currency.swift in Sources */,
 				2E3591DA250A093800DB80EF /* SymbolsRepositoryTests.swift in Sources */,
 				2EDE4D702504C87C003376BA /* Requestable.swift in Sources */,
@@ -552,11 +570,13 @@
 				2E659A672505DE5A00E5A746 /* RateRepository.swift in Sources */,
 				2E63893225075A82000C24F8 /* MockRateRepository.swift in Sources */,
 				2EDE4D632504B9CB003376BA /* APIEndpointTests.swift in Sources */,
+				2E51D74D250BB48900BB4D4D /* SymbolViewModel.swift in Sources */,
 				2E659A74250613A000E5A746 /* RateViewModel.swift in Sources */,
 				2EDE4D722504CA90003376BA /* JSONRequest.swift in Sources */,
 				2EDE4D652504BA0C003376BA /* Endpoint.swift in Sources */,
 				2EDEFD8925045E9C00D7EB46 /* ObservableTests.swift in Sources */,
 				2E659A6C2505EA8400E5A746 /* JSONRequestable.swift in Sources */,
+				2E51D74A250BADDF00BB4D4D /* MockSymbolRepository.swift in Sources */,
 				2E63893425075A96000C24F8 /* FailureMockRateRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
