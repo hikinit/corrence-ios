@@ -57,7 +57,8 @@ class SymbolPickerViewController: UIViewController, FromNIB {
 
   // MARK: - Table View
   private func setupTableView() {
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    let cell = UINib(nibName: SymbolPickerViewCell.nibName, bundle: SymbolPickerViewCell.nibBundle)
+    tableView.register(cell, forCellReuseIdentifier: SymbolPickerViewCell.nibName)
 
     tableView.dataSource = self
     tableView.rowHeight = UITableView.automaticDimension
@@ -93,11 +94,15 @@ extension SymbolPickerViewController: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: SymbolPickerViewCell.nibName,
+            for: indexPath) as? SymbolPickerViewCell else {
+      return UITableViewCell()
+    }
 
     viewModel.input.selectItemAtIndexPath(indexPath)
     let cellViewModel = viewModel.output.selectedItemModel
-    cell.textLabel?.text = cellViewModel.output.symbolDescription
+    cell.configure(with: cellViewModel)
 
     return cell
   }

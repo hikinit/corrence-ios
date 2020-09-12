@@ -10,6 +10,8 @@
 		2E12C9ED250BAA2800EED1CB /* SymbolPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E12C9EC250BAA2800EED1CB /* SymbolPickerViewModel.swift */; };
 		2E135A18250B7359003819E3 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E135A17250B7359003819E3 /* Filter.swift */; };
 		2E135A19250B7359003819E3 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E135A17250B7359003819E3 /* Filter.swift */; };
+		2E24BF3D250C433500451001 /* SymbolPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E24BF3B250C433500451001 /* SymbolPickerViewCell.swift */; };
+		2E24BF3E250C433500451001 /* SymbolPickerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E24BF3C250C433500451001 /* SymbolPickerViewCell.xib */; };
 		2E2BD0172508812E0002BD08 /* RateViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BD0162508812E0002BD08 /* RateViewCellModel.swift */; };
 		2E2BD0182508812E0002BD08 /* RateViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BD0162508812E0002BD08 /* RateViewCellModel.swift */; };
 		2E3591D8250A050100DB80EF /* SymbolsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3591D7250A050100DB80EF /* SymbolsRepository.swift */; };
@@ -93,6 +95,8 @@
 /* Begin PBXFileReference section */
 		2E12C9EC250BAA2800EED1CB /* SymbolPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolPickerViewModel.swift; sourceTree = "<group>"; };
 		2E135A17250B7359003819E3 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		2E24BF3B250C433500451001 /* SymbolPickerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolPickerViewCell.swift; sourceTree = "<group>"; };
+		2E24BF3C250C433500451001 /* SymbolPickerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymbolPickerViewCell.xib; sourceTree = "<group>"; };
 		2E2BD0162508812E0002BD08 /* RateViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewCellModel.swift; sourceTree = "<group>"; };
 		2E3591D7250A050100DB80EF /* SymbolsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsRepository.swift; sourceTree = "<group>"; };
 		2E3591D9250A093800DB80EF /* SymbolsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsRepositoryTests.swift; sourceTree = "<group>"; };
@@ -375,6 +379,8 @@
 				2E81EF4E25089F8A002C545C /* RateViewCell.xib */,
 				2E630E6E25099BFE00616D05 /* RateViewHeader.swift */,
 				2E630E7025099CE000616D05 /* RateViewHeader.xib */,
+				2E24BF3B250C433500451001 /* SymbolPickerViewCell.swift */,
+				2E24BF3C250C433500451001 /* SymbolPickerViewCell.xib */,
 				2EFD094D250B0C5E0003C594 /* SymbolView.swift */,
 				2EFD094F250B0C710003C594 /* SymbolView.xib */,
 			);
@@ -479,6 +485,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E24BF3E250C433500451001 /* SymbolPickerViewCell.xib in Resources */,
 				2EFD0948250A24830003C594 /* SymbolPickerViewController.xib in Resources */,
 				2E81EF5025089F8A002C545C /* RateViewCell.xib in Resources */,
 				2EDEFD5A25044D5500D7EB46 /* LaunchScreen.storyboard in Resources */,
@@ -511,6 +518,7 @@
 				2EF8EF842509E0B3005BF6E7 /* Debouncer.swift in Sources */,
 				2EFD0947250A24830003C594 /* SymbolPickerViewController.swift in Sources */,
 				2EF8EF922509F8AC005BF6E7 /* Symbols.swift in Sources */,
+				2E24BF3D250C433500451001 /* SymbolPickerViewCell.swift in Sources */,
 				2E638941250784D2000C24F8 /* Coordinator.swift in Sources */,
 				2E630E6F25099BFE00616D05 /* RateViewHeader.swift in Sources */,
 				2E659A6B2505EA8400E5A746 /* JSONRequestable.swift in Sources */,
