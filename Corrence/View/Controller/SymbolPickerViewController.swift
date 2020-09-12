@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol SymbolPickerViewControllerDelegate: AnyObject {
+  func symbolDidPick(viewModel: SymbolViewModelType)
+}
+
 class SymbolPickerViewController: UIViewController, FromNIB {
   // MARK: - Outlet
   @IBOutlet weak var tableView: UITableView!
+
+  weak var delegate: SymbolPickerViewControllerDelegate?
 
   // MARK: - Initializer
   private var viewModel: SymbolPickerViewModelType
@@ -61,6 +67,7 @@ class SymbolPickerViewController: UIViewController, FromNIB {
     tableView.register(cell, forCellReuseIdentifier: SymbolPickerViewCell.nibName)
 
     tableView.dataSource = self
+    tableView.delegate = self
     tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 80
   }
@@ -105,5 +112,13 @@ extension SymbolPickerViewController: UITableViewDataSource {
     cell.configure(with: cellViewModel)
 
     return cell
+  }
+}
+
+extension SymbolPickerViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    viewModel.input.selectItemAtIndexPath(indexPath)
+
+    delegate?.symbolDidPick(viewModel: viewModel.output.selectedItemModel)
   }
 }

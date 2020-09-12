@@ -43,6 +43,11 @@ class RateViewController: UIViewController, FromNIB {
     viewModel.input.viewDidLoad()
   }
 
+  func selectSymbol(viewModel symbolVM: SymbolViewModelType) {
+    headerView.configure(with: symbolVM)
+    viewModel.input.selectBase(symbolVM.output.symbolCode)
+  }
+
   // MARK: - Binding
   private func setupBinding() {
     viewModel.output.title.bind { [weak self] title in
@@ -107,11 +112,9 @@ extension RateViewController: UISearchResultsUpdating {
     }
 
     searchDebouncer.invalidate()
-
     searchDebouncer.handler = { [weak self] in
       self?.viewModel.input.searchCurrency(searchText)
     }
-
     searchDebouncer.call()
   }
 }

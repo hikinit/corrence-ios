@@ -11,6 +11,7 @@ class SymbolPickerCoordinator: NavigationCoordinator {
   var navigationController: UINavigationController
   var childCoordinators: [Coordinator] = []
   var onCompleted: () -> Void = {}
+  var parentCoordinator: RateCoordinator?
 
   required init(navigationController: UINavigationController) {
     self.navigationController = navigationController
@@ -23,8 +24,17 @@ class SymbolPickerCoordinator: NavigationCoordinator {
     let viewModel = SymbolPickerViewModel(repository: repository)
 
     let controller = SymbolPickerViewController(viewModel: viewModel)
+    controller.delegate = self
+
     let navCon = UINavigationController(rootViewController: controller)
 
     navigationController.present(navCon, animated: true, completion: onCompleted)
+  }
+}
+
+extension SymbolPickerCoordinator: SymbolPickerViewControllerDelegate {
+  func symbolDidPick(viewModel: SymbolViewModelType) {
+    parentCoordinator?.symbolDidPick(viewModel)
+    navigationController.dismiss(animated: true)
   }
 }

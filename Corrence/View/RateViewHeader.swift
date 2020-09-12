@@ -41,7 +41,7 @@ class RateViewHeader: NibView {
   }
 
   // MARK: - View
-  func configure(with viewModel: SymbolViewModel) {
+  func configure(with viewModel: SymbolViewModelType) {
     symbolView.configure(with: viewModel)
   }
 
