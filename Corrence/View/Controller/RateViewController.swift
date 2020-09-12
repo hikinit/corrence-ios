@@ -15,7 +15,7 @@ class RateViewController: UIViewController, FromNIB {
   // MARK: - Outlet
   @IBOutlet weak var tableView: UITableView!
   lazy var headerView: RateViewHeader = {
-    let view = RateViewHeader(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 100))
+    let view = RateViewHeader(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 120))
     view.delegate = self
     return view
   }()

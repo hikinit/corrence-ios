@@ -15,8 +15,13 @@ protocol RateViewHeaderDelegate: RateViewController {
 class RateViewHeader: NibView {
   // MARK: - Outlet
   @IBOutlet weak var containerView: UIView!
-  @IBOutlet weak var flagImageView: UIImageView!
   @IBOutlet weak var currencyAmountTextField: UITextField!
+  @IBOutlet weak var symbolView: SymbolView!
+
+  // MARK: - Action
+  @IBAction func symbolViewDidTap(_ sender: UITapGestureRecognizer) {
+    delegate?.symbolDidTap()
+  }
 
   weak var delegate: RateViewHeaderDelegate?
 
@@ -26,7 +31,6 @@ class RateViewHeader: NibView {
 
     setupView()
     setupTextField()
-    setupGestureRecognizer()
   }
 
   required init?(coder: NSCoder) {
@@ -34,13 +38,15 @@ class RateViewHeader: NibView {
 
     setupView()
     setupTextField()
-    setupGestureRecognizer()
   }
 
   // MARK: - View
+  func configure(with viewModel: SymbolViewModel) {
+    symbolView.configure(with: viewModel)
+  }
+
   private func setupView() {
     containerView.layer.cornerRadius = 8
-    flagImageView.layer.cornerRadius = 4
   }
 
   // MARK: - Text Field
@@ -64,16 +70,5 @@ class RateViewHeader: NibView {
 
   @objc private func textFieldDidCancel() {
     currencyAmountTextField.resignFirstResponder()
-  }
-
-  // MARK: - Gesture Recognizer
-  private func setupGestureRecognizer() {
-    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(symbolDidTap))
-
-    flagImageView.addGestureRecognizer(tapGesture)
-  }
-
-  @objc private func symbolDidTap() {
-    delegate?.symbolDidTap()
   }
 }
