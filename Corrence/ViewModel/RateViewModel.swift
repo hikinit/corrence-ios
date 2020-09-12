@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum RateViewModelState {
+  case error(Error)
+  case loading
+  case loaded
+}
+
 // MARK: - IO Protocol
 protocol RateViewModelInput {
   func inputCurrencyAmount(_ amount: String)
@@ -19,8 +25,7 @@ protocol RateViewModelInput {
 protocol RateViewModelOutput: AnyObject {
   var currencyBase: String { get set }
   var numberOfItems: Int { get }
-  var onError: ((Error) -> Void) { get set }
-  var reloadData: (() -> Void) { get set }
+  var onState: ((RateViewModelState) -> Void) { get set }
   var selectedItemModel: RateViewCellModelType { get }
   var title: String { get }
 }
@@ -70,8 +75,7 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
     currencyRatesFiltered.count
   }
 
-  var onError: ((Error) -> Void) = {_ in}
-  var reloadData: (() -> Void) = {}
+  var onState: ((RateViewModelState) -> Void) = {_ in}
   var selectedItemModel: RateViewCellModelType {
     RateViewCellModel(rate: transformedRate())
   }
@@ -84,13 +88,14 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
   private var currencyRates: [CurrencyRate] = []
   private func fetchRate() {
     let base = output.currencyBase
+    output.onState(.loading)
     repository.fetch(base: base) { [weak self] in
       switch $0 {
       case .success(let currency):
         self?.currencyRates = currency.rates.sorted { $1.iso > $0.iso }
-        self?.output.reloadData()
+        self?.output.onState(.loaded)
       case .failure(let error):
-        self?.output.onError(error)
+        self?.output.onState(.error(error))
       }
     }
   }

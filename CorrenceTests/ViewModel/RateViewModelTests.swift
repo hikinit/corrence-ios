@@ -24,8 +24,12 @@ class RateViewModelTests: XCTestCase {
     let expectation = XCTestExpectation()
     var base = "USD"
 
-    sut.output.reloadData = { [self] in
-      XCTAssertEqual(sut.output.title.value, "\(base) Latest Rates")
+    sut.output.onState = { [self] in
+      guard case .loaded = $0 else {
+        return
+      }
+
+      XCTAssertEqual(sut.output.title, "\(base) Latest Rates")
       XCTAssertEqual(sut.output.numberOfItems, 6)
 
       expectation.fulfill()
@@ -43,7 +47,11 @@ class RateViewModelTests: XCTestCase {
     let customError = RequestableError.invalidResponse
     sut = RateViewModel(repository: FailureMockRateRepository(error:customError))
 
-    sut.output.onError = { error in
+    sut.output.onState = {
+      guard case let .error(error) = $0 else {
+        return
+      }
+
       XCTAssertEqual(error.localizedDescription, customError.localizedDescription)
       expectation.fulfill()
     }
@@ -57,7 +65,11 @@ class RateViewModelTests: XCTestCase {
     let expectation = XCTestExpectation()
     let indexPath = IndexPath(row: 0, section: 0)
 
-    sut.output.reloadData = { [self] in
+    sut.output.onState = { [self] in
+      guard case .loaded = $0 else {
+        return
+      }
+      
       sut.input.selectItemAtIndexPath(indexPath)
       let jpy = sut.output.selectedItemModel
 

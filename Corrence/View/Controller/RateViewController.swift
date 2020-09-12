@@ -50,10 +50,18 @@ class RateViewController: UIViewController, FromNIB {
 
   // MARK: - Binding
   private func setupBinding() {
-    viewModel.output.reloadData = { [weak self] in
-      DispatchQueue.main.async {
-        self?.title = self?.viewModel.output.title
-        self?.tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
+
+    viewModel.output.onState = { [weak self] in
+      switch $0 {
+      case .error(_):
+        break
+      case .loading:
+        break
+      case .loaded:
+        DispatchQueue.main.async {
+          self?.title = self?.viewModel.output.title
+          self?.tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
+        }
       }
     }
   }
