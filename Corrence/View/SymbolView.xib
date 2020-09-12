@@ -17,36 +17,37 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5zX-VA-e89">
-            <rect key="frame" x="0.0" y="0.0" width="292" height="110"/>
+        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5zX-VA-e89">
+            <rect key="frame" x="0.0" y="0.0" width="292" height="70"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="flag/usd" translatesAutoresizingMaskIntoConstraints="NO" id="3j0-s1-O74">
-                    <rect key="frame" x="0.0" y="39" width="48" height="32"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="48" id="OQM-MA-Whc"/>
-                        <constraint firstAttribute="height" constant="32" id="okO-Dh-DiL"/>
-                    </constraints>
-                </imageView>
-                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="fjl-mV-aUN">
-                    <rect key="frame" x="56" y="34.5" width="236" height="41"/>
+                <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="at6-hy-dDh">
+                    <rect key="frame" x="0.0" y="0.0" width="91.5" height="32"/>
                     <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="flag/usd" translatesAutoresizingMaskIntoConstraints="NO" id="3j0-s1-O74">
+                            <rect key="frame" x="0.0" y="0.0" width="48" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="3j0-s1-O74" secondAttribute="height" multiplier="3:2" id="EJq-ie-ZN6"/>
+                                <constraint firstAttribute="width" constant="40" id="OQM-MA-Whc"/>
+                            </constraints>
+                        </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="InF-bI-Bt5">
-                            <rect key="frame" x="0.0" y="0.0" width="34.5" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="United States Dollar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5j-Sz-PLR">
-                            <rect key="frame" x="0.0" y="20.5" width="152" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <rect key="frame" x="56" y="0.0" width="35.5" height="32"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                 </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="United States Dollar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v5j-Sz-PLR">
+                    <rect key="frame" x="0.0" y="40" width="137" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="MaV-M7-foc"/>
-            <point key="canvasLocation" x="-36" y="-82"/>
+            <point key="canvasLocation" x="-36.231884057971016" y="-82.366071428571431"/>
         </stackView>
     </objects>
     <resources>
