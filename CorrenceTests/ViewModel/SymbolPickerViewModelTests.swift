@@ -23,7 +23,10 @@ class SymbolPickerViewModelTests: XCTestCase {
   func testFetchSymbols() {
     let expectation = XCTestExpectation()
 
-    sut.output.reloadData = { [self] in
+    sut.output.onState = { [self] in
+      guard case .loaded = $0 else {
+        return
+      }
       XCTAssertEqual(sut.output.numberOfItems, 4)
 
       expectation.fulfill()
@@ -39,7 +42,11 @@ class SymbolPickerViewModelTests: XCTestCase {
     let customError = RequestableError.unknownError
     sut = SymbolPickerViewModel(repository: FailureMockSymbolRepository(error: customError))
 
-    sut.output.onError = { error in
+    sut.output.onState = {
+      guard case let .error(error) = $0 else {
+        return
+      }
+      
       XCTAssertEqual(error.localizedDescription, customError.localizedDescription)
       expectation.fulfill()
     }

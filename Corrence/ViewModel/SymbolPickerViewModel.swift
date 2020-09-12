@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum SymbolPickerViewModelState {
+  case error(Error)
+  case loading
+  case loaded
+}
+
 // MARK: - IO Protocol
 protocol SymbolPickerViewModelInput {
   func searchCurrency(_ search: String)
@@ -16,8 +22,7 @@ protocol SymbolPickerViewModelInput {
 
 protocol SymbolPickerViewModelOutput: AnyObject {
   var numberOfItems: Int { get }
-  var onError: ((Error) -> Void) { get set }
-  var reloadData: (() -> Void) { get set }
+  var onState: ((SymbolPickerViewModelState) -> Void) { get set }
   var selectedItemModel: SymbolViewModelType { get }
   var title: String { get }
 }
@@ -55,8 +60,7 @@ class SymbolPickerViewModel: SymbolPickerViewModelType, SymbolPickerViewModelInp
     symbolsFiltered.count
   }
 
-  var onError: ((Error) -> Void) = {_ in}
-  var reloadData: (() -> Void) = {}
+  var onState: ((SymbolPickerViewModelState) -> Void) = {_ in}
   var selectedItemModel: SymbolViewModelType {
     SymbolViewModel(symbol: symbolsFiltered[selectedIndexPath.row])
   }
@@ -68,13 +72,16 @@ class SymbolPickerViewModel: SymbolPickerViewModelType, SymbolPickerViewModelInp
   // MARK: - Helper
   private var symbols: [Symbol] = []
   private func fetchSymbols() {
+    symbols = []
+    output.onState(.loading)
+
     repository.fetch { [weak self] in
       switch $0 {
       case .success(let symbols):
         self?.symbols = symbols.list.map { $1 }.sorted { $1.code > $0.code }
-        self?.output.reloadData()
+        self?.output.onState(.loaded)
       case .failure(let error):
-        self?.output.onError(error)
+        self?.output.onState(.error(error))
       }
     }
   }

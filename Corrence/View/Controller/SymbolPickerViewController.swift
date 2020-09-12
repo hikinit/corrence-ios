@@ -38,14 +38,59 @@ class SymbolPickerViewController: UIViewController, FromNIB {
     viewModel.input.viewDidLoad()
   }
 
+  // MARK: - Binding
   private func setupBinding() {
-    title = viewModel.output.title
-
-    viewModel.output.reloadData = { [weak self] in
+    viewModel.output.onState = { [weak self] state in
       DispatchQueue.main.async {
-        self?.tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
+        defer {
+          self?.tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
+          self?.title = self?.viewModel.output.title
+        }
+
+        switch state {
+        case .error(let error):
+          self?.stateDidError(error)
+        case .loading:
+          self?.stateDidLoading()
+        case .loaded:
+          self?.stateDidLoaded()
+        }
       }
     }
+  }
+
+  // MARK: - State Handling
+  private func stateDidError(_ error: Error) {
+    defer {
+      tableView.backgroundView = errorView
+    }
+
+    let errorView = StateMessageView(frame: tableView.bounds)
+    errorView.configure(type: "Error", description: error.localizedDescription, symbol: "x.square")
+
+    guard let backgroundView = tableView.backgroundView else {
+      return
+    }
+
+    UIView.transition(
+      from: backgroundView,
+      to: errorView,
+      duration: 0.3,
+      options: [.curveEaseInOut, .transitionCrossDissolve],
+      completion: nil)
+  }
+
+  private func stateDidLoading() {
+    let loadingView = StateMessageView(frame: tableView.bounds)
+    loadingView.configure(type: "Loading...", description: "", symbol: "arrow.clockwise.icloud")
+
+    UIView.transition(with: loadingView, duration: 1, options: [.transitionCrossDissolve], animations: {
+      self.tableView.backgroundView = loadingView
+    }, completion: nil)
+  }
+
+  private func stateDidLoaded() {
+    tableView.backgroundView = nil
   }
 
   // MARK: - Search Bar
