@@ -26,6 +26,15 @@ extension CacheSymbolsRepository: Cacheable {
     return try? PropertyListDecoder().decode(Symbols.self, from: data)
   }
 
+  func getCachedSymbol(code: String) -> Symbol? {
+    guard let cachedData = cachedData,
+          let cachedSymbol = cachedData.list[code] else {
+      return nil
+    }
+
+    return cachedSymbol
+  }
+
   func cache(data: Symbols) {
     let data = try? PropertyListEncoder().encode(data)
     UserDefaults.standard.setValue(data, forKey: cacheKey)

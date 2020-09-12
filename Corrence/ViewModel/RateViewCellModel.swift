@@ -13,6 +13,7 @@ protocol RateViewCellModelOutput {
   var currencyIsoCode: String { get }
   var currencyValue: String { get }
   var currencySymbol: String { get }
+  var symbolViewModel: SymbolViewModelType { get }
 }
 
 protocol RateViewCellModelType {
@@ -47,6 +48,16 @@ class RateViewCellModel: RateViewCellModelType, RateViewCellModelInput, RateView
         !$0.isWhitespace &&
         !$0.isPunctuation
     }
+  }
+
+  var symbolViewModel: SymbolViewModelType {
+    let cache = CacheSymbolsRepository()
+
+    guard let symbol = cache.getCachedSymbol(code: rate.iso) else {
+      return SymbolViewModel(symbol: Symbol(code: rate.iso, description: ""))
+    }
+
+    return SymbolViewModel(symbol: symbol)
   }
 
   // MARK: - Helper

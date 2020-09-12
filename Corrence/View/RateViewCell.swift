@@ -15,5 +15,7 @@ class RateViewCell: UITableViewCell, FromNIB {
   func configure(with viewModel: RateViewCellModelType) {
     currencyValueLabel.text = viewModel.output.currencyValue
     currencySymbolLabel.text = viewModel.output.currencySymbol
+
+    symbolView.configure(with: viewModel.output.symbolViewModel)
   }
 }
