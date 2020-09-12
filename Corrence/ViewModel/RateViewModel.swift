@@ -22,7 +22,7 @@ protocol RateViewModelOutput: AnyObject {
   var onError: ((Error) -> Void) { get set }
   var reloadData: (() -> Void) { get set }
   var selectedItemModel: RateViewCellModelType { get }
-  var title: Observable<String> { get }
+  var title: String { get }
 }
 
 protocol RateViewModelType {
@@ -76,8 +76,8 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
     RateViewCellModel(rate: transformedRate())
   }
 
-  var title: Observable<String> {
-    Observable("\(currencyBase) Latest Rates")
+  var title: String {
+    "\(currencyBase) Latest Rates"
   }
 
   // MARK: - Helper
