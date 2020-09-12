@@ -14,16 +14,19 @@ class NibView: UIView, FromNIB {
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupNib()
+    setupUI()
   }
 
   required init?(coder: NSCoder) {
     super.init(coder: coder)
     setupNib()
+    setupUI()
   }
 
   override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
     setupNib()
+    setupUI()
   }
 
   // MARK: - Load Nib
@@ -43,4 +46,6 @@ class NibView: UIView, FromNIB {
       view.trailingAnchor.constraint(equalTo: trailingAnchor),
     ])
   }
+
+  internal func setupUI() {}
 }
