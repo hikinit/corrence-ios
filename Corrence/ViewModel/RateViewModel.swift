@@ -88,7 +88,10 @@ class RateViewModel: RateViewModelType, RateViewModelInput, RateViewModelOutput 
   private var currencyRates: [CurrencyRate] = []
   private func fetchRate() {
     let base = output.currencyBase
+
+    currencyRates = []
     output.onState(.loading)
+    
     repository.fetch(base: base) { [weak self] in
       switch $0 {
       case .success(let currency):

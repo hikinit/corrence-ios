@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17147" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17120"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StateMessageView" customModule="Corrence" customModuleProvider="target">
+            <connections>
+                <outlet property="iconImageView" destination="Abm-lV-e6E" id="o6G-0L-LcD"/>
+                <outlet property="messageDescriptionView" destination="7DD-A2-x3o" id="ok0-hU-QUx"/>
+                <outlet property="messageTypeView" destination="wbP-hX-9uV" id="Aiq-Mj-O96"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lx0-ya-kmm" userLabel="Container View">
+            <rect key="frame" x="0.0" y="0.0" width="292" height="216"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Abm-lV-e6E" userLabel="Icon">
+                    <rect key="frame" x="87.5" y="28" width="117" height="117"/>
+                    <color key="tintColor" systemColor="labelColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Abm-lV-e6E" secondAttribute="height" multiplier="1:1" id="g38-35-StN"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MESSAGE TYPE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbP-hX-9uV">
+                    <rect key="frame" x="82.5" y="153" width="127" height="21"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.34999999403953552" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DD-A2-x3o">
+                    <rect key="frame" x="44" y="182" width="204" height="18"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="rWo-6g-hei"/>
+            <constraints>
+                <constraint firstItem="7DD-A2-x3o" firstAttribute="top" secondItem="wbP-hX-9uV" secondAttribute="bottom" constant="8" id="124-uf-UjF"/>
+                <constraint firstItem="wbP-hX-9uV" firstAttribute="centerX" secondItem="Abm-lV-e6E" secondAttribute="centerX" id="5GQ-p4-U1j"/>
+                <constraint firstItem="Abm-lV-e6E" firstAttribute="centerX" secondItem="lx0-ya-kmm" secondAttribute="centerX" id="9Xz-bn-V1i"/>
+                <constraint firstItem="7DD-A2-x3o" firstAttribute="width" secondItem="lx0-ya-kmm" secondAttribute="width" multiplier="0.7" id="cGZ-M2-GaL"/>
+                <constraint firstItem="Abm-lV-e6E" firstAttribute="width" secondItem="lx0-ya-kmm" secondAttribute="width" multiplier="0.4" id="lOQ-XR-lhc"/>
+                <constraint firstItem="7DD-A2-x3o" firstAttribute="centerX" secondItem="Abm-lV-e6E" secondAttribute="centerX" id="pDI-GS-YWP"/>
+                <constraint firstItem="Abm-lV-e6E" firstAttribute="centerY" secondItem="lx0-ya-kmm" secondAttribute="centerY" multiplier="0.8" id="vfm-tJ-ZCP"/>
+                <constraint firstItem="wbP-hX-9uV" firstAttribute="top" secondItem="Abm-lV-e6E" secondAttribute="bottom" constant="8" id="xWz-rD-gbI"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-63.768115942028992" y="-210.26785714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
