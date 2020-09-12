@@ -24,6 +24,23 @@ enum RequestableError: Error {
   case serverError
 }
 
+extension RequestableError: LocalizedError {
+  var errorDescription: String? {
+    switch self {
+    case .emptyData:
+      return NSLocalizedString("The server returns empty data", comment: "Empty Data")
+    case .invalidResponse:
+      return NSLocalizedString("The server returns an invalid response", comment: "Invalid Response")
+    case .unknownError:
+      return NSLocalizedString("Unknown Error", comment: "Unknown Error")
+    case .clientError:
+      return NSLocalizedString("The server cannot handle your request", comment: "Client Error")
+    case .serverError:
+      return NSLocalizedString("The server has encountered a problem", comment: "Server Error")
+    }
+  }
+}
+
 extension Requestable {
   func verify(response: HTTPURLResponse, data: Data?) -> ResponseResult {
     switch response.statusCode {

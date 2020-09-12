@@ -24,3 +24,12 @@ extension JSONRequestable {
 enum JSONRequestableError: Error {
   case cannotDecodeJSON
 }
+
+extension JSONRequestableError: LocalizedError {
+  var errorDescription: String? {
+    switch self {
+    case .cannotDecodeJSON:
+      return NSLocalizedString("The data cannot be decoded to JSON", comment: "Cannot Decode JSON")
+    }
+  }
+}
